@@ -1,0 +1,3 @@
+/// @desc manage input
+
+scHandleInput();
