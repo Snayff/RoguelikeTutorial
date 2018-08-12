@@ -111,6 +111,14 @@
             }
         },
         {
+            "Key": "726c7116-8313-4e76-9dac-6486c302e5d9",
+            "Value": {
+                "id": "2801824b-f07c-43eb-b6c0-9f9d2420f778",
+                "resourcePath": "views\\726c7116-8313-4e76-9dac-6486c302e5d9.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "73a9c916-eaa8-4831-ac41-da88e58730ce",
             "Value": {
                 "id": "e9e570e9-8aa6-4027-ad51-c89855c7eb66",
@@ -119,18 +127,26 @@
             }
         },
         {
-            "Key": "7666338d-5cda-4b29-b0d0-9cc4c9da36ee",
-            "Value": {
-                "id": "b5c43c36-64b1-42bb-8b9e-817f91750f1b",
-                "resourcePath": "sprites\\spPlayer\\spPlayer.yy",
-                "resourceType": "GMSprite"
-            }
-        },
-        {
             "Key": "7681c533-e581-4f27-a032-a2654e97fa75",
             "Value": {
                 "id": "f0144b41-c8e3-4e9e-b564-86efd9ed38be",
                 "resourcePath": "sprites\\spTile\\spTile.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "76a4d6df-581c-41dd-ba5b-cc1f96ba9726",
+            "Value": {
+                "id": "33520c12-e80a-49c9-8393-1b3aa88d03b6",
+                "resourcePath": "objects\\oNpc\\oNpc.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "777a92f5-22ad-4d33-bf9f-f3f624f811cf",
+            "Value": {
+                "id": "f30bf17f-362c-4470-878a-d703d810a6c3",
+                "resourcePath": "sprites\\spCalibriFont\\spCalibriFont.yy",
                 "resourceType": "GMSprite"
             }
         },

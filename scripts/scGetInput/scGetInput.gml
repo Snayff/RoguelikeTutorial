@@ -5,21 +5,21 @@
 // Directions
 
 //KEYBOARD
+
+kbRightPressed = keyboard_check_pressed(vk_right);
+kbLeftPressed = keyboard_check_pressed(vk_left);
+kbUpPressed = keyboard_check_pressed(vk_up);
+kbDownPressed = keyboard_check_pressed(vk_down);
 /*
-kbRightPressed = keyboard_check_pressed(kbRight);
-kbLeftPressed = keyboard_check_pressed(kbLeft);
-kbUpPressed = keyboard_check_pressed(kbUp);
-kbDownPressed = keyboard_check_pressed(kbDown);
-*/
 kbRightHeld = keyboard_check(vk_right);
 kbLeftHeld = keyboard_check(vk_left);
 kbUpHeld =  keyboard_check(vk_up);
 kbDownHeld = keyboard_check(vk_down);
-
-inpRight = kbRightHeld;
-inpLeft = kbLeftHeld;
-inpUp = kbUpHeld;
-inpDown = kbDownHeld;
+*/
+inpRight = kbRightPressed;
+inpLeft = kbLeftPressed;
+inpUp = kbUpPressed;
+inpDown = kbDownPressed;
 inpCancel = keyboard_check_pressed(vk_escape);
 inpFullScreen = keyboard_check_pressed(ord("F"));//keyboard_check_pressed(vk_enter) && keyboard_check_pressed(vk_alt);
 
