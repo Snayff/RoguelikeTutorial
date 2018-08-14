@@ -22,11 +22,13 @@ darkGround[2] = make_color_rgb(50,50,150);
 //initialise tile array
 for (var _arrayHeight = mapHeight / TILESIZE; _arrayHeight >= 0; _arrayHeight--; ){
 	for (var _arrayLength = mapWidth / TILESIZE; _arrayLength >= 0; _arrayLength--; ){	
-		tileArray[_arrayHeight, _arrayLength] = 0;
+		tileArray[_arrayHeight, _arrayLength] = 0 ;
+		tileArray[_arrayHeight, _arrayLength] |= isBlockingMovement | isBlockingSight;
 
 	}
 }
 
+/*
 //set some tile as blockingMovement and blocking sight
 tileArray[10,20] |= isBlockingMovement | isBlockingSight;
 tileArray[11,20] |= isBlockingMovement | isBlockingSight;

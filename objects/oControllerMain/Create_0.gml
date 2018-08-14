@@ -8,7 +8,7 @@ draw_set_valign(fa_middle);
 
 //load controllers
 instance_create_depth(0,0,0,oControllerView);
-instance_create_depth(0,0,0,oControllerInput);
-instance_create_depth(0,0,0,oControllerEntity);
 instance_create_depth(0,0,0,oControllerTile);
+instance_create_depth(0,0,0,oControllerEntity);
+instance_create_depth(0,0,0,oControllerInput);
 
