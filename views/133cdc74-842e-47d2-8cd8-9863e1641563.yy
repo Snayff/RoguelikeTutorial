@@ -7,7 +7,7 @@
         "046c3777-b40c-4a6e-a36e-019d617118a8"
     ],
     "filterType": "GMScript",
-    "folderName": "TBC",
+    "folderName": "Dev Support",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "199e2b0b-dd58-458e-8a20-aa1f59ebb250",
+            "Value": {
+                "id": "de6c2e1a-99ff-45c7-983b-49a9756ed11f",
+                "resourcePath": "scripts\\scConvertToTile\\scConvertToTile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "1cc684c0-4880-4163-8e7c-777a4672980b",
             "Value": {
                 "id": "6ab1b61a-5ffd-42af-a30f-613829d75938",
@@ -135,6 +143,22 @@
             }
         },
         {
+            "Key": "520031d7-c567-4503-92e3-e7d7fca4612c",
+            "Value": {
+                "id": "ed51a9b5-c5ee-4c6a-aa10-9c5bdb4b5263",
+                "resourcePath": "scripts\\scConvertToXY\\scConvertToXY.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "710dbe6a-6a11-4906-9595-dd2ddf1435a2",
+            "Value": {
+                "id": "ef870d55-5fd1-4863-9168-cfb322b15dcc",
+                "resourcePath": "scripts\\scCreateMap\\scCreateMap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "726c7116-8313-4e76-9dac-6486c302e5d9",
             "Value": {
                 "id": "2801824b-f07c-43eb-b6c0-9f9d2420f778",
@@ -195,6 +219,14 @@
             "Value": {
                 "id": "f986278e-e174-49d5-9583-68df4d4b2d59",
                 "resourcePath": "views\\8b131bf6-4892-4a5f-9d01-17e64a075586.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8c0af267-64ee-4539-a7a4-0826950cc788",
+            "Value": {
+                "id": "5a25280e-a5f7-42de-9180-44a6c5fd234b",
+                "resourcePath": "views\\8c0af267-64ee-4539-a7a4-0826950cc788.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -364,7 +396,10 @@
         "adf58472-bbd3-4a38-bd51-9f3f6d428911",
         "dec718d8-3e3d-44ff-91b6-7b5b0153115b",
         "046c3777-b40c-4a6e-a36e-019d617118a8",
-        "332e21a8-1427-42db-bfa9-6ab63a4acbd4"
+        "710dbe6a-6a11-4906-9595-dd2ddf1435a2",
+        "332e21a8-1427-42db-bfa9-6ab63a4acbd4",
+        "520031d7-c567-4503-92e3-e7d7fca4612c",
+        "199e2b0b-dd58-458e-8a20-aa1f59ebb250"
     ],
     "tutorial": ""
 }

@@ -14,8 +14,8 @@ show_debug_message("MOVE:") ;
 
 //check if trying to move outside of array
 if _targetX > 0 || _targetX < array_length_2d(oControllerTile.tileArray, _targetY)  || _targetY > 0 || _targetY < array_height_2d(oControllerTile.tileArray) {
-	//check if tile is NOT isBlockingMovement
-	if oControllerTile.tileArray[ _targetY, _targetX] & oControllerTile.isBlockingMovement = 0 {
+	//check if tile is NOT ISBLOCKINGMOVEMENT
+	if oControllerTile.tileArray[ _targetY, _targetX] & ISBLOCKINGMOVEMENT = 0 {
 		//check if another entity is in the way
 		if oControllerEntity.entityArray[ _targetY, _targetX] == 0 {
 		

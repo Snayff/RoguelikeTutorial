@@ -1,5 +1,8 @@
 /// @desc handle entity
 
+
+scDebugMsg("CREATE CONTROLLER ENTITY:");
+
 //set map values
 mapHeight = room_height;
 mapWidth = room_width;
@@ -17,7 +20,7 @@ for (var _arrayHeight = mapHeight / TILESIZE; _arrayHeight >= 0; _arrayHeight--;
 
 
 //initialise player
-player = instance_create_depth(4 * TILESIZE, 6 * TILESIZE,0,oPlayer);
+player = instance_create_depth(5 * TILESIZE, 9 * TILESIZE,0,oPlayer);
 ds_list_add(entityList, player);
 
 //move player to centre of array

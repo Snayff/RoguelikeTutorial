@@ -1,7 +1,7 @@
-/// @desc log( values )
-/// @param values
+/// @desc Convert value to string and show in dbeug
+/// @param {any} val Value to show
 /// @param [...]
-
+/// example use: scDebugMsg("Log this", msgText)
 var _string = "";
 
 for  (var _i = 0; _i < argument_count; _i++ ) {
