@@ -4,44 +4,52 @@
 scDebugMsg("CREATE CONTROLLER ENTITY:");
 
 //set map values
-mapHeight = room_height;
-mapWidth = room_width;
+mapHeightInTiles = scConvertToTile(room_height);
+mapWidthInTiles = scConvertToTile(room_width);
 
 //create entity list
 entityList = ds_list_create()
 
 //initialise entity array
-for (var _arrayHeight = mapHeight / TILESIZE; _arrayHeight >= 0; _arrayHeight--; ){
-	for (var _arrayLength = mapWidth / TILESIZE; _arrayLength >= 0; _arrayLength--; ){	
-		entityArray[_arrayHeight, _arrayLength] = 0;
+oControllerTile.entityArray = ds_grid_create(mapWidthInTiles, mapHeightInTiles);
+ds_grid_set_region(oControllerTile.entityArray, 0, 0, ds_grid_width(oControllerTile.entityArray), ds_grid_height(oControllerTile.entityArray), 0);
 
-	}
-}
+//for (var _arrayHeight = mapHeight / TILESIZE; _arrayHeight >= 0; _arrayHeight--; ){
+//	for (var _arrayLength = mapWidth / TILESIZE; _arrayLength >= 0; _arrayLength--; ){	
+//		entityArray[_arrayHeight, _arrayLength] = 0;
+
+//	}
+//}
 
 
 //initialise player
 player = instance_create_depth(5 * TILESIZE, 9 * TILESIZE,0,oPlayer);
 ds_list_add(entityList, player);
 
-//move player to centre of array
-entityArray[player.y / TILESIZE, player.x / TILESIZE] = player;
 //track player's position in world in startingGrid*
-player.startingGridX = player.x / TILESIZE;
-player.startingGridY = player.y / TILESIZE;
+player.startingGridX = scConvertToTile(player.x);
+player.startingGridY = scConvertToTile(player.y);
 
-show_debug_message("passToStartingX: " + string(player.x / TILESIZE) +  " passToStartingY: " + string(player.y / TILESIZE));
-show_debug_message("startingX: " + string(player.startingGridX) + " startingY: " + string(player.startingGridY));
-show_debug_message("arrayValue: " + string(entityArray[player.y / TILESIZE, player.x / TILESIZE] ));
+//log player on array
+ds_grid_set(oControllerTile.entityArray, player.startingGridX, player.startingGridY, player);
+
+//entityArray[player.y / TILESIZE, player.x / TILESIZE] = player;
+
 
 //initialise npc
 npc = instance_create_depth(2 * TILESIZE, 4 * TILESIZE,0,oNpc);
 ds_list_add(entityList, npc);
 
-//move npc to off-centre of screen
-entityArray[npc.y / TILESIZE, npc.x / TILESIZE] = npc;
-//track player's position in world in startingGrid*
-npc.startingGridX = npc.x / TILESIZE;
-npc.startingGridY = npc.y / TILESIZE;
+//track npc's position in world in startingGrid*
+npc.startingGridX = scConvertToTile(npc.x);
+npc.startingGridY = scConvertToTile(npc.y);
+
+//log npc on array
+ds_grid_set(oControllerTile.entityArray, npc.startingGridX, npc.startingGridY, npc);
+
+//entityArray[npc.y / TILESIZE, npc.x / TILESIZE] = npc;
+
+
 
 
 
