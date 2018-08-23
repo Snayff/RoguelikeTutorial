@@ -6,14 +6,6 @@ scDebugMsg("CREATE MAP:");
 var _room1 = 0;
 var _room2 = 0;
 
-//set map values
-mapHeightInTiles = scConvertToTile(room_height);
-mapWidthInTiles = scConvertToTile(room_width);
-
-//manage rooms
-numberOfRooms = 0;
-oControllerTile.roomList = ds_grid_create(4, 1);// x, y, centreX, centreY
-oControllerTile.tileArray = ds_grid_create(mapWidthInTiles, mapHeightInTiles);
 
 //tile info
 // 0 = sprite / 1 = subimage / 2 = colour
@@ -26,12 +18,12 @@ darkGround[2] = make_color_rgb(50,50,150);
 
 
 //initialise tile array as walls
-ds_grid_set_region(oControllerTile.tileArray, 0, 0, ds_grid_width(oControllerTile.tileArray), ds_grid_height(oControllerTile.tileArray), ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
+ds_grid_set_region(oControllerTile.tileGrid, 0, 0, ds_grid_width(oControllerTile.tileGrid), ds_grid_height(oControllerTile.tileGrid), ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
 
 //for (var _arrayHeight = mapHeight; _arrayHeight >= 0; _arrayHeight--; ){
 //	for (var _arrayLength = mapWidth; _arrayLength >= 0; _arrayLength--; ){	
-//		oControllerTile.tileArray[_arrayHeight, _arrayLength] = 0 ;
-//		oControllerTile.tileArray[_arrayHeight, _arrayLength] |= ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT;
+//		oControllerTile.tileGrid[_arrayHeight, _arrayLength] = 0 ;
+//		oControllerTile.tileGrid[_arrayHeight, _arrayLength] |= ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT;
 
 //	}
 //}

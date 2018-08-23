@@ -9,7 +9,7 @@ var _startingTileX = argument2;
 
 scDebugMsg("CREATE V TUNNEL:");
 
-ds_grid_set_region(oControllerTile.tileArray, _startingTileX, _startingTileY, _startingTileX , _startingTileY + _heightOfRoom, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
+ds_grid_set_region(oControllerTile.tileGrid, _startingTileX, _startingTileY, _startingTileX , _startingTileY + _heightOfRoom, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
 
 scDebugMsg("x1: ", _startingTileX, " x2: ", _startingTileX, " y1: ", _startingTileY, " y2: ", _startingTileY + _heightOfRoom );
 
@@ -17,6 +17,6 @@ scDebugMsg("x1: ", _startingTileX, " x2: ", _startingTileX, " y1: ", _startingTi
 //for ( var _y = min(_y1, _y2); _y < max(_y1, _y2); _y++ ) {
 	
 //	//deactivate flags on tiles
-//	oControllerTile.tileArray[_y, _x] = (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT); 
+//	oControllerTile.tileGrid[_y, _x] = (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT); 
 //}
 

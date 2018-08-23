@@ -306,7 +306,7 @@
             "Key": "c57e83cc-0645-4008-a5bf-86cc32578599",
             "Value": {
                 "id": "0d67a741-feeb-4333-872f-3fe2f20426d2",
-                "resourcePath": "scripts\\scAddToRoomList\\scAddToRoomList.yy",
+                "resourcePath": "scripts\\scAddRoomInfo\\scAddRoomInfo.yy",
                 "resourceType": "GMScript"
             }
         },

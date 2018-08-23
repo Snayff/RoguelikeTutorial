@@ -16,8 +16,8 @@ var _heightOfRoom = argument3;
 scDebugMsg("CREATE ROOM:");
 
 //check room doesnt intersect ** needs updating to check for intersection
-if ds_grid_get(oControllerTile.roomList, 0,0) == 0 {
-	var _gridSize = ds_grid_height(oControllerTile.roomList);
+if ds_grid_get(oControllerTile.roomInfoGrid, 0,0) == 0 {
+	var _gridSize = ds_grid_height(oControllerTile.roomInfoGrid);
 	
 	for ( var _index = 0; _index < _gridSize; _index ++) {
 		var _listX = 0;
@@ -40,11 +40,18 @@ if (_startingTileY + _heightOfRoom) > oControllerTile.mapHeightInTiles - 1 {
 
 //check if room is greater than 1x1
 if _widthOfRoom > 1 || _heightOfRoom > 1 {
-	ds_grid_set_region(oControllerTile.tileArray, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
+	for (var _x = _startingTileX + 1; _x <= _startingTileX + (_widthOfRoom - 1) && _x <= oControllerTile.mapWidthInTiles - 1; _x++) { //+1/-1 to ensure a wall is always left
+		for (var _y = _startingTileY + 1; _y <= _startingTileY + ( _heightOfRoom - 1) && _y <= oControllerTile.mapHeightInTiles - 1; _y++) { //+1/-1 to ensure a wall is always left
+			oControllerTile.tileGrid[# _x, _y] &= ~(ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
+			//ds_grid_set_region(oControllerTile.tileGrid, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
+		}
+	}
+} else {
+	scDebugMsg("Room too small to create.")	
 }
 
 //add to room list
-scAddToRoomList(_startingTileX, _startingTileY, _widthOfRoom, _heightOfRoom);
+scAddRoomInfo(_startingTileX, _startingTileY, _widthOfRoom, _heightOfRoom);
 
 //log room co-ords
 scDebugMsg("x1: ", _startingTileX, " x2: ", _startingTileX + _widthOfRoom, " y1: ", _startingTileY, " y2: ", _startingTileY + _heightOfRoom );
@@ -54,7 +61,7 @@ scDebugMsg("x1: ", _startingTileX, " x2: ", _startingTileX + _widthOfRoom, " y1:
 //	for (var _y = _startingTileY + 1; _y <= _startingTileY + ( _heightOfRoom - 1) && _y <= oControllerTile.mapHeight - 1; _y++) { //+1/-1 to ensure a wall is always left
 		
 //		//deactivate flags on tiles
-//		oControllerTile.tileArray[_y, _x] = (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT); 
+//		oControllerTile.tileGrid[_y, _x] = (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT); 
 		
 //		//log room creation
 //		if _firstXUsed == -1 || _x < _firstXUsed {

@@ -9,35 +9,37 @@ var _y = argument2;
 
 var _targetX = (_entity.startingGridX + _x);
 var _targetY = (_entity.startingGridY + _y);
+var _test = ds_grid_get(oControllerTile.tileGrid, _targetX, _targetY);
+//var _tileGridValue = oControllerTile.tileGrid[_targetX, _targetY];
 
-show_debug_message("MOVE:") ;
+scDebugMsg("MOVE:") ;
 
 //check if trying to move outside of array
-if _targetX > 0 || _targetX < array_length_2d(oControllerTile.tileArray, _targetY)  || _targetY > 0 || _targetY < array_height_2d(oControllerTile.tileArray) {
+if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targetY > 0 || _targetY < ds_grid_height(oControllerTile.tileGrid) {
 	//check if tile is NOT ISBLOCKINGMOVEMENT
-	if ds_grid_get(oControllerTile.tileArray, _targetY, _targetX) & ISBLOCKINGMOVEMENT == 0{
-	//if oControllerTile.tileArray[ _targetY, _targetX] & ISBLOCKINGMOVEMENT = 0 {
+	if _test & ISBLOCKINGMOVEMENT == 0{
+	//if oControllerTile.tileGrid[ _targetY, _targetX] & ISBLOCKINGMOVEMENT = 0 {
 		//check if another entity is in the way
-		if ds_grid_get(oControllerEntity.entityArray,  _targetY, _targetX) == 0 {
+		if ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY) == 0 {
 		
-		//if oControllerEntity.entityArray[ _targetY, _targetX] == 0 {
+		//if oControllerEntity.entityGrid[ _targetY, _targetX] == 0 {
 		
 			//no entity in the way so move
-			show_debug_message("startY: " + string(_entity.startingGridY) + " startX: " + string(_entity.startingGridX) );
-			show_debug_message("targetY: " + string(_targetY) + " targetX: " + string(_targetX) );
-			//show_debug_message("startingArrayValueBeforeMove: " +  string(oControllerEntity.entityArray[ _entity.startingGridY, _entity.startingGridX]))
-			scDebugMsg("startingArrayValueBeforeMove: ", ds_grid_get(oControllerEntity.entityArray, _entity.startingGridX, _entity.startingGridY));
+			scDebugMsg("startY: ", _entity.startingGridY, " startX: ", _entity.startingGridX );
+			scDebugMsg("targetY: ", _targetY," targetX: ",_targetX );
+			//show_debug_message("startingArrayValueBeforeMove: " +  string(oControllerEntity.entityGrid[ _entity.startingGridY, _entity.startingGridX]))
+			scDebugMsg("startingArrayValueBeforeMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 		
-			//remove entity from current position in entityArray
-			ds_grid_set(oControllerEntity.entityArray, _entity.startingGridX, _entity.startingGridY, 0);
-			//oControllerEntity.entityArray[ _entity.startingGridY, _entity.startingGridX] = 0;
+			//remove entity from current position in entityGrid
+			ds_grid_set(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY, 0);
+			//oControllerEntity.entityGrid[ _entity.startingGridY, _entity.startingGridX] = 0;
 		
-			//show_debug_message("startingArrayValueAfterMove: " +  string(oControllerEntity.entityArray[ _entity.startingGridY, _entity.startingGridX]))
-			scDebugMsg("startingArrayValueAfterMove: ", ds_grid_get(oControllerEntity.entityArray, _entity.startingGridX, _entity.startingGridY));
+			//show_debug_message("startingArrayValueAfterMove: " +  string(oControllerEntity.entityGrid[ _entity.startingGridY, _entity.startingGridX]))
+			scDebugMsg("startingArrayValueAfterMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 			
 			//add entity to new position in array
-			//oControllerEntity.entityArray[ _targetY, _targetX] = _entity;
-			ds_grid_set(oControllerEntity.entityArray, _targetX, _targetY, player);
+			//oControllerEntity.entityGrid[ _targetY, _targetX] = _entity;
+			ds_grid_set(oControllerEntity.entityGrid, _targetX, _targetY, _entity);
 		
 			//move entity
 			_entity.x = _targetX * TILESIZE;
@@ -48,13 +50,15 @@ if _targetX > 0 || _targetX < array_length_2d(oControllerTile.tileArray, _target
 			_entity.startingGridY = _targetY;
 		} else {
 			//bump attack
-			//show_debug_message("An entity (" + string(oControllerEntity.entityArray[ _targetY, _targetX]) + ") is blocking the target location.")	;
-			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityArray, _targetX, _targetY), ") is blocking the target location.");
+			//show_debug_message("An entity (" + string(oControllerEntity.entityGrid[ _targetY, _targetX]) + ") is blocking the target location.")	;
+			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") is blocking the target location [",_targetX, ",", _targetY, "].");
+
 		}
 
 	} else {
-		show_debug_message("A tile is blocking the target location.")	;
+		scDebugMsg("A tile is blocking the target location [",_targetX, ",", _targetY, "]." )	;
+		
 	}
 } else {
-	show_debug_message("The target location exceeds the map limits.")	;
+	scDebugMsg("The target location exceeds the map limits [",_targetX, ",", _targetY, "].")	;
 }
