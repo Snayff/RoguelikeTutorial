@@ -6,6 +6,15 @@
 #macro ISBLOCKINGMOVEMENT 1
 #macro ISBLOCKINGSIGHT 2
 
+//roomInfoGrid enum
+enum roomInfo {
+	startX,
+	startY,
+	width,
+	height,
+	enumSize
+}
+
 //set map values
 mapHeightInTiles = scConvertToTile(room_height);
 mapWidthInTiles = scConvertToTile(room_width);

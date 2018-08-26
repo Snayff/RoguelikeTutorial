@@ -10,13 +10,6 @@ entityList = ds_list_create()
 entityGrid = ds_grid_create(oControllerTile.mapWidthInTiles, oControllerTile.mapHeightInTiles);
 ds_grid_set_region(oControllerEntity.entityGrid, 0, 0, ds_grid_width(oControllerEntity.entityGrid), ds_grid_height(oControllerEntity.entityGrid), 0);
 
-//for (var _arrayHeight = mapHeight / TILESIZE; _arrayHeight >= 0; _arrayHeight--; ){
-//	for (var _arrayLength = mapWidth / TILESIZE; _arrayLength >= 0; _arrayLength--; ){	
-//		entityGrid[_arrayHeight, _arrayLength] = 0;
-
-//	}
-//}
-
 
 //initialise player
 player = instance_create_depth(5 * TILESIZE, 9 * TILESIZE,0,oPlayer);

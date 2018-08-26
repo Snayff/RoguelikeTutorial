@@ -20,17 +20,10 @@ darkGround[2] = make_color_rgb(50,50,150);
 //initialise tile array as walls
 ds_grid_set_region(oControllerTile.tileGrid, 0, 0, ds_grid_width(oControllerTile.tileGrid), ds_grid_height(oControllerTile.tileGrid), ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
 
-//for (var _arrayHeight = mapHeight; _arrayHeight >= 0; _arrayHeight--; ){
-//	for (var _arrayLength = mapWidth; _arrayLength >= 0; _arrayLength--; ){	
-//		oControllerTile.tileGrid[_arrayHeight, _arrayLength] = 0 ;
-//		oControllerTile.tileGrid[_arrayHeight, _arrayLength] |= ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT;
-
-//	}
-//}
 
 scDebugMsg("Tiles created as walls.");
 
-//room info
+//room requirements
 // 0 = tileX / 1 = width / 2 = tileY / 3 = height
 
 //room1
