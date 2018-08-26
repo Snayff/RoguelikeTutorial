@@ -3,6 +3,8 @@
 ///@param y Starting Y
 ///@param width width of room
 ///@param height height of room
+///@param centreX centre X coord
+///@param centreY centre Y coord
 
 var _grid = oControllerTile.roomInfoGrid;
 

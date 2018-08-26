@@ -59,12 +59,38 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 			}
 		}
 		
+		var _centreX = round((_startingTileX + (_startingTileX + _widthOfRoom)) / 2);
+		var _centreY = round((_startingTileY + (_startingTileY + _heightOfRoom)) / 2);
+		
 		//log room co-ords
-		scDebugMsg("x1: ", _startingTileX, " y1: ", _startingTileY," x2: ", _startingTileX + _widthOfRoom, " y2: ", _startingTileY + _heightOfRoom );
+		scDebugMsg("x1: ", _startingTileX, " y1: ", _startingTileY," x2: ", _startingTileX + _widthOfRoom, " y2: ", _startingTileY + _heightOfRoom, " centreX: ", _centreX, " centreY: ", _centreY );
 
 		
+		//if first room add player, if not add tunnel between rooms
+		if oControllerTile.numberOfRooms == 0 {
+			//*** add player - how? player is initialised after...
+		} else {
+			var _previousRoomCentreX = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreX, ds_grid_height(oControllerTile.roomInfoGrid)-1);
+			var _previousRoomCentreY = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreY, ds_grid_height(oControllerTile.roomInfoGrid)-1);
+			
+			//determine which way to tunnel first
+			if irandom_range(0,1) == 0 {
+				scCreateHTunnel(_previousRoomCentreX, _centreX, _previousRoomCentreY);
+				scCreateVTunnel(_previousRoomCentreY, _centreY, _centreX);
+			} else {
+				scCreateVTunnel(_previousRoomCentreY, _centreY, _previousRoomCentreX);
+				scCreateHTunnel(_previousRoomCentreX, _centreX, _centreY);
+			}
+			
+			scDebugMsg("Tunnel created between Room ",ds_grid_height(oControllerTile.roomInfoGrid) -2, " and Room ", ds_grid_height(oControllerTile.roomInfoGrid)-1 );
+		}
+		
 		//add to room list
-		scAddRoomInfoToGrid(_startingTileX, _startingTileY, _widthOfRoom, _heightOfRoom);
+		scAddRoomInfoToGrid(_startingTileX, _startingTileY, _widthOfRoom, _heightOfRoom, _centreX, _centreY);
+		
+		//update number of rooms
+		oControllerTile.numberOfRooms++;
+		
 	} else {
 	scDebugMsg("Room not created due to intersect")	;
 	}
@@ -73,5 +99,4 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 } else {
 	scDebugMsg("Room too small to create.")	;
 }
-
 

@@ -40,6 +40,5 @@ _room2[0] = 10;
 //create the rooms
 scCreateRoom(_room1[0], _room1[1], _room1[2], _room1[3]);
 scCreateRoom(_room2[0], _room2[1], _room2[2], _room2[3]);
-scCreateHTunnel(7,14,12);
 
 scDebugMsg("Rooms carved out.");
