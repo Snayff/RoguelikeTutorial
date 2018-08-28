@@ -7,16 +7,6 @@ var _room1 = 0;
 var _room2 = 0;
 
 
-//tile info
-// 0 = sprite / 1 = subimage / 2 = colour
-darkWall[0] = spCalibriFont;
-darkWall[1] = 35;
-darkWall[2] = make_color_rgb(0,0,100);
-darkGround[0] = spTile;
-darkGround[1] = 0;
-darkGround[2] = make_color_rgb(50,50,150);
-
-
 //initialise tile array as walls
 ds_grid_set_region(oControllerTile.tileGrid, 0, 0, ds_grid_width(oControllerTile.tileGrid), ds_grid_height(oControllerTile.tileGrid), ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
 

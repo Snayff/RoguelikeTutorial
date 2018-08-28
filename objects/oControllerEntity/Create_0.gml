@@ -18,11 +18,11 @@ ds_list_add(entityList, player);
 //track player's position in world in startingGrid*
 player.startingGridX = scConvertToTile(player.x);
 player.startingGridY = scConvertToTile(player.y);
+player.endingGridX = player.startingGridX;
+player.endingGridY = player.startingGridY;
 
 //log player on array
 ds_grid_set(oControllerEntity.entityGrid, player.startingGridX, player.startingGridY, player);
-
-//entityGrid[player.y / TILESIZE, player.x / TILESIZE] = player;
 
 
 //initialise npc
@@ -32,11 +32,13 @@ ds_list_add(entityList, npc);
 //track npc's position in world in startingGrid*
 npc.startingGridX = scConvertToTile(npc.x);
 npc.startingGridY = scConvertToTile(npc.y);
+npc.endingGridX = npc.startingGridX;
+npc.endingGridY = npc.startingGridY;
 
 //log npc on array
 ds_grid_set(oControllerEntity.entityGrid, npc.startingGridX, npc.startingGridY, npc);
 
-//entityGrid[npc.y / TILESIZE, npc.x / TILESIZE] = npc;
+
 
 
 

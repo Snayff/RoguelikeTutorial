@@ -34,12 +34,13 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			ds_grid_set(oControllerEntity.entityGrid, _targetX, _targetY, _entity);
 		
 			//move entity
-			_entity.x = _targetX * TILESIZE;
-			_entity.y = _targetY * TILESIZE;
+			_entity.x = scConvertToXY(_targetX);
+			_entity.y = scConvertToXY(_targetY);
 		
 			//update startingGrid* vars
-			_entity.startingGridX = _targetX;
-			_entity.startingGridY = _targetY;
+			_entity.endingGridX = _targetX;
+			_entity.endingGridY = _targetY;
+			
 		} else {
 			//bump attack
 			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") is blocking the target location [",_targetX, ",", _targetY, "].");
