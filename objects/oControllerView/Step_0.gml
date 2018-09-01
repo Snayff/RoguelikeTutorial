@@ -1,6 +1,6 @@
-/// @desc recalc fov
+/// @desc update FOV
 
-if fovRecompute {
+if fovRecompute == true {
 	scCalculateFov();	
 	
 	fovRecompute = false; //turn flag off
