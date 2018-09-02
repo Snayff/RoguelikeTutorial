@@ -1,8 +1,8 @@
 {
-    "id": "0ad94bb1-2ca7-41ff-9498-5511562809cf",
+    "id": "bde49972-44dc-4c6a-9978-7f720073f5ee",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scSetTileVisibilityInOctant",
+    "name": "scGetFovDistance",
     "IsCompatibility": false,
     "IsDnD": false
 }

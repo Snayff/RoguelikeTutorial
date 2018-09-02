@@ -1,7 +1,7 @@
 /// @desc
 
 //field of view values
-fovRadius = 10; //how far player can see, i.e. how much is shown on screen
+fovRadius = 5; //how far player can see, i.e. how much is shown on screen
 fovRecompute = true; //flag to determine when fov needs to be recalculated
 
 //create viewGrid - handle lighting

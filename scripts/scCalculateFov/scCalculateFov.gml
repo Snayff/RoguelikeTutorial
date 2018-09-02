@@ -22,7 +22,9 @@ oControllerView.viewGrid[# _startX, _startY] |= ISVISIBLE;
 //rotate through octants and set vision
 for(var _octant = 0; _octant < 8; _octant++)
 {
-	scCalculateVisionInOctant(_octant, _startX, _startY, _fovRange, 1, 1, 1, 1, 0);
+	scCalculateVisionInOctant(_octant, _startX, _startY, _fovRange, 1, 1, 1, 0, 1);
+	//FOV_Compute(_octant, _startX, _startY, _fovRange, 1, 1, 1, 0, 1);
+
 }
 
 

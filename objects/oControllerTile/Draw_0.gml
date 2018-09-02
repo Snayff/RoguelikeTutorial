@@ -12,6 +12,8 @@ for (var _arrayHeight = ds_grid_height(oControllerTile.tileGrid)-1; _arrayHeight
 		//check if tile ISBLOCKINGMOVEMENT, i.e. a wall. otherwise it is a floor
 		if _tileValue & ISBLOCKINGMOVEMENT {
 			//check if can be seen
+			
+			
 			if _viewValue & ISVISIBLE {
 				scDrawTile(wall[tileInfo.sprite], wall[tileInfo.subImage], _tileX, _tileY, COLOUR_LIGHTWALL);
 			} else {
@@ -23,8 +25,15 @@ for (var _arrayHeight = ds_grid_height(oControllerTile.tileGrid)-1; _arrayHeight
 				scDrawTile(ground[tileInfo.sprite], ground[tileInfo.subImage], _tileX, _tileY, COLOUR_LIGHTGROUND);
 			} else {
 				scDrawTile(ground[tileInfo.sprite], ground[tileInfo.subImage], _tileX, _tileY, COLOUR_DARKGROUND);
-			}	
+			}
+			
 		}
-
+		/*if _tileValue & ISBLOCKINGSIGHT {
+			scDrawTile(spCalibriFont, 49, _tileX, _tileY, c_lime);
+		} else {
+			scDrawTile(spCalibriFont, 48, _tileX, _tileY, c_olive);
+		}
+		*/
+		
 	}
 }

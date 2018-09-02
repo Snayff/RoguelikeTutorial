@@ -7,7 +7,8 @@
         "f3f925f7-7353-421d-81ab-7e4cd2a3330f",
         "80e09f8d-0966-4dc3-9934-891fc36fcccb",
         "c9f3a108-7450-43c0-a14b-539b7453b7e6",
-        "0ad94bb1-2ca7-41ff-9498-5511562809cf"
+        "0ad94bb1-2ca7-41ff-9498-5511562809cf",
+        "bde49972-44dc-4c6a-9978-7f720073f5ee"
     ],
     "filterType": "GMScript",
     "folderName": "FOV",

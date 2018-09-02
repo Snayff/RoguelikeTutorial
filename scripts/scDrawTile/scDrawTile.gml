@@ -7,4 +7,4 @@
 
 
 
-draw_sprite_ext(argument0, argument1, argument2, argument3 , 1, 1, 0, argument4, 1);
+return draw_sprite_ext(argument0, argument1, argument2, argument3 , 1, 1, 0, argument4, 1);
