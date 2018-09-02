@@ -50,7 +50,7 @@
             "Key": "0ad94bb1-2ca7-41ff-9498-5511562809cf",
             "Value": {
                 "id": "dc872539-53e0-4307-8f48-53263fd63b45",
-                "resourcePath": "scripts\\scSetTileInOctantToVisible\\scSetTileInOctantToVisible.yy",
+                "resourcePath": "scripts\\scSetTileInOctantToVisibleExplored\\scSetTileInOctantToVisibleExplored.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -151,6 +151,14 @@
             }
         },
         {
+            "Key": "3ffb155f-ecfb-447a-88e9-6d40f2f060fa",
+            "Value": {
+                "id": "ea64b5f1-e055-4e13-8ad8-7c21182cd735",
+                "resourcePath": "scripts\\scRemoveBitmaskValue\\scRemoveBitmaskValue.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "42ab2cc3-5a33-4dc0-b1bb-fa58d90ecb9a",
             "Value": {
                 "id": "ee1a4583-ef0a-443e-b1b4-f3f5a6f2561f",
@@ -171,6 +179,14 @@
             "Value": {
                 "id": "ed51a9b5-c5ee-4c6a-aa10-9c5bdb4b5263",
                 "resourcePath": "scripts\\scConvertToXY\\scConvertToXY.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "57066662-abb5-4109-b99c-688b46c090be",
+            "Value": {
+                "id": "c9433f65-b322-4545-bc6a-f07633b5d04f",
+                "resourcePath": "scripts\\scAddBitmaskValue\\scAddBitmaskValue.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -508,6 +524,8 @@
         "c57e83cc-0645-4008-a5bf-86cc32578599",
         "520031d7-c567-4503-92e3-e7d7fca4612c",
         "199e2b0b-dd58-458e-8a20-aa1f59ebb250",
+        "57066662-abb5-4109-b99c-688b46c090be",
+        "3ffb155f-ecfb-447a-88e9-6d40f2f060fa",
         "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
         "f3f925f7-7353-421d-81ab-7e4cd2a3330f",
         "80e09f8d-0966-4dc3-9934-891fc36fcccb",

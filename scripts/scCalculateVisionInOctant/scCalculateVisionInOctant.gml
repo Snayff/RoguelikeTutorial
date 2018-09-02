@@ -123,7 +123,7 @@ for(; _dx <= _fovRange; _dx++) { // (x <= (uint)rangeLimit) == (rangeLimit < 0 |
 			
 			var isVisible = ((dy != topY || (_slopeTopY*_dx >= _slopeTopX*dy)) && (dy != bottomY || (_slopeBottomY*_dx <= _slopeBottomX*dy)));
 
-			if(isVisible) scSetTileInOctantToVisible(_dx, dy, _octant, _xpos, _ypos); 
+			if(isVisible) scSetTileInOctantToVisibleExplored(_dx, dy, _octant, _xpos, _ypos); 
 
 			// if we found a transition from clear to opaque or vice versa, adjust the top and bottom vectors
 			if(_dx != _fovRange) { // but don't bother adjusting them if this is the last column a_nyway

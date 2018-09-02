@@ -1,4 +1,4 @@
-///@desc update viewGrid to show tile as visible
+///@desc update viewGrid to show tile as visible & explored
 ///@param targetTileX tile X of target
 ///@param targetTileY tile Y of target
 ///@param octant octant number out of 8
@@ -28,6 +28,6 @@ switch(_octant){
 }
 
 	
-	
-oControllerView.viewGrid[# _nx, _ny] |= ISVISIBLE;
+scAddBitmaskValue(oControllerView.viewGrid, _nx, _ny, ISVISIBLE, ISEXPLORED);
+//oControllerView.viewGrid[# _nx, _ny] |= ISVISIBLE | ISEXPLORED;
 //scDebugMsg("Updated viewGrid[", _newX, ",", _newY, "] from ", _currentViewValue, " to ",_newViewValue,"." )
