@@ -21,14 +21,16 @@ if inpFullScreen == true {
 	oViewController.alarm[0] = 1; // recenters display
 }
 
-//movement
-if inpRight == true {
-	scMove(_player, 1, 0);
-} else if inpLeft == true {
-	scMove(_player, -1, 0);	
-} else if inpUp == true {
-	scMove(_player, 0, -1);
-} else if inpDown == true {
-	scMove(_player, 0, 1);	
-}
 
+if global.currentGameState == gameState.playerTurn {
+	//movement
+	if inpRight == true {
+		scEntityAttemptMove(_player, 1, 0);
+	} else if inpLeft == true {
+		scEntityAttemptMove(_player, -1, 0);	
+	} else if inpUp == true {
+		scEntityAttemptMove(_player, 0, -1);
+	} else if inpDown == true {
+		scEntityAttemptMove(_player, 0, 1);	
+	}
+}

@@ -1,3 +1,13 @@
+//font info
+global.font = font_add_sprite(spCalibriFont, ord("!"), false, 2);
+
+//map info
+global.mapWidthInTiles =  scConvertToTile(room_width);
+global.mapHeightInTiles = scConvertToTile(room_height);
+
+//turn management
+global.currentGameState = gameState.playerTurn;
+
 //tile info
 #macro TILESIZE 32
 // tile bitmask notations
@@ -29,4 +39,30 @@ enum tileInfo {
 	sprite,
 	subImage,
 	enumSize
+}
+
+//entity names
+enum entityName {
+	player,
+	orc,
+	troll,
+	enumSize
+	
+}
+
+//entity info
+enum entityStartingInfo {
+	name,
+	sprite,
+	subimage,
+	colour,
+	enumSize
+}
+
+//game state
+enum gameState{
+	playerTurn,
+	enemyTurn,
+	enumSize
+	
 }

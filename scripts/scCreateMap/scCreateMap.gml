@@ -14,21 +14,23 @@ ds_grid_set_region(oControllerTile.tileGrid, 0, 0, ds_grid_width(oControllerTile
 scDebugMsg("Tiles created as walls.");
 
 //room requirements
-// 0 = tileX / 1 = width / 2 = tileY / 3 = height
+// 0 = tileX / 1 = width / 2 = tileY / 3 = height / 4 = max monsters
 
 //room1
+_room1[4] = 3; 
 _room1[3] = 6; 
 _room1[2] = 8; 
 _room1[1] = 3; 
 _room1[0] = 4; 
 //room2
-_room2[3] = 4; 
+_room2[4] = 2; 
+_room2[3] = 7; 
 _room2[2] = 12; 
-_room2[1] = 6; 
+_room2[1] = 10; 
 _room2[0] = 10; 
 
 //create the rooms
-scCreateRoom(_room1[0], _room1[1], _room1[2], _room1[3]);
-scCreateRoom(_room2[0], _room2[1], _room2[2], _room2[3]);
+scCreateRoom(_room1[0], _room1[1], _room1[2], _room1[3], _room1[4]);
+scCreateRoom(_room2[0], _room2[1], _room2[2], _room2[3], _room2[4]);
 
-scDebugMsg("Rooms carved out.");
+scDebugMsg("All rooms carved out.");

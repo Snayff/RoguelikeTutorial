@@ -1,29 +1,32 @@
 ///@desc carve out a room in the map
-///@param {real} startingTileX First Tile x
-///@param {real} widthOfRoom The room's width
-///@param {real} startingTileY First Tile y
-///@param {real} heightOfRoom The room's height
+///@param startingTileX First Tile x
+///@param widthOfRoom The room's width
+///@param startingTileY First Tile y
+///@param heightOfRoom The room's height
+///@param maxMonsters max number of monsters for the room
+
 
 var _startingTileX = argument0;
 var _widthOfRoom = argument1;
 var _startingTileY = argument2;
 var _heightOfRoom = argument3;
+var _maxMonsters = argument4;
 var _intersectFound = false;
 
 scDebugMsg("CREATE ROOM:");
 
 
 //check if co-ords given are in the map
-if (_startingTileX + _widthOfRoom) > oControllerTile.mapWidthInTiles - 1 { // -1 to leave a wall
-	_widthOfRoom = 	min((_startingTileX + _widthOfRoom) - oControllerTile.mapWidthInTiles - 1, _startingTileX);
+if (_startingTileX + _widthOfRoom) > global.mapWidthInTiles - 1 { // -1 to leave a wall
+	_widthOfRoom = 	min((_startingTileX + _widthOfRoom) - global.mapWidthInTiles - 1, _startingTileX);
 } 
-if (_startingTileY + _heightOfRoom) > oControllerTile.mapHeightInTiles - 1 {
-	_heightOfRoom = min((_startingTileY + _heightOfRoom) - oControllerTile.mapHeightInTiles - 1, _startingTileY);
+if (_startingTileY + _heightOfRoom) > global.mapHeightInTiles - 1 {
+	_heightOfRoom = min((_startingTileY + _heightOfRoom) - global.mapHeightInTiles - 1, _startingTileY);
 } 
 
 //check target room doesnt intersect with an existing room
 //if there isnt a room (no width) in roomInfoGrid then this is the first room so dont check
-if ds_grid_get(oControllerTile.roomInfoGrid, 3,0) <> 0 {
+if ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.width, 0) <> 0 {
 	var _gridSize = ds_grid_height(oControllerTile.roomInfoGrid);
 	
 	//loop through existing rooms until intersect found
@@ -52,9 +55,9 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 	//check no room intersect
 	if _intersectFound == false {
 	
-		for (var _x = _startingTileX + 1; _x <= _startingTileX + (_widthOfRoom - 1) && _x <= oControllerTile.mapWidthInTiles - 1; _x++) { //+1/-1 to ensure a wall is always left
-			for (var _y = _startingTileY + 1; _y <= _startingTileY + ( _heightOfRoom - 1) && _y <= oControllerTile.mapHeightInTiles - 1; _y++) { //+1/-1 to ensure a wall is always left
-				oControllerTile.tileGrid[# _x, _y] &= ~(ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
+		for (var _x = _startingTileX + 1; _x <= _startingTileX + (_widthOfRoom - 1) && _x <= global.mapWidthInTiles - 1; _x++) { //+1/-1 to ensure a wall is always left
+			for (var _y = _startingTileY + 1; _y <= _startingTileY + ( _heightOfRoom - 1) && _y <= global.mapHeightInTiles - 1; _y++) { //+1/-1 to ensure a wall is always left
+				oControllerTile.tileGrid[# _x, _y] &= ~(ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT); //***change to function
 			
 			}
 		}
@@ -63,12 +66,12 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 		var _centreY = round((_startingTileY + (_startingTileY + _heightOfRoom)) / 2);
 		
 		//log room co-ords
-		scDebugMsg("x1: ", _startingTileX, " y1: ", _startingTileY," x2: ", _startingTileX + _widthOfRoom, " y2: ", _startingTileY + _heightOfRoom, " centreX: ", _centreX, " centreY: ", _centreY );
+		scDebugMsg("Room created: x1: ", _startingTileX, " y1: ", _startingTileY," x2: ", _startingTileX + _widthOfRoom, " y2: ", _startingTileY + _heightOfRoom, " centreX: ", _centreX, " centreY: ", _centreY );
 
 		
-		//if first room add player, if not add tunnel between rooms
+		//if first room add player, if not add tunnel between rooms and populate with monsters
 		if oControllerTile.numberOfRooms == 0 {
-			//*** add player - how? player is initialised after...
+			scCreateEntity(_centreX, _centreY, entityName.player);
 		} else {
 			var _previousRoomCentreX = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreX, ds_grid_height(oControllerTile.roomInfoGrid)-1);
 			var _previousRoomCentreY = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreY, ds_grid_height(oControllerTile.roomInfoGrid)-1);
@@ -83,10 +86,15 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 			}
 			
 			scDebugMsg("Tunnel created between Room ",ds_grid_height(oControllerTile.roomInfoGrid) -2, " and Room ", ds_grid_height(oControllerTile.roomInfoGrid)-1 );
+			
+			//add entities to room
+			scAddEntitiesToRoom(_maxMonsters, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom,  entityName.orc, entityName.troll);
 		}
 		
-		//add to room list
+		//add to roomInfoGrid
 		scAddRoomInfoToGrid(_startingTileX, _startingTileY, _widthOfRoom, _heightOfRoom, _centreX, _centreY);
+		
+		
 		
 		//update number of rooms
 		oControllerTile.numberOfRooms++;

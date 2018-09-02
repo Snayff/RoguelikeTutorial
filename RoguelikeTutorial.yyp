@@ -95,6 +95,14 @@
             }
         },
         {
+            "Key": "1fdcea5f-f996-4f97-9b6f-3a5eca0bf026",
+            "Value": {
+                "id": "0d7cc4fa-5fff-42c4-b236-ab682179fd4f",
+                "resourcePath": "views\\1fdcea5f-f996-4f97-9b6f-3a5eca0bf026.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "2009fac7-4901-4dc1-b6bf-3d0e1c1c83fc",
             "Value": {
                 "id": "7991a9a4-31de-4749-9db1-5854e77a4d1f",
@@ -123,6 +131,14 @@
             "Value": {
                 "id": "a1e32f3c-a094-452f-bd0c-0de96383c3c5",
                 "resourcePath": "scripts\\scCreateRoom\\scCreateRoom.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "3385a5b4-3439-4767-a067-393da202fd17",
+            "Value": {
+                "id": "2f23f39b-6d6c-4595-a65a-09c2cc366239",
+                "resourcePath": "scripts\\scEntityMove\\scEntityMove.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -191,6 +207,14 @@
             }
         },
         {
+            "Key": "5dcf8abd-acca-43f3-90b4-24b4d94c6de1",
+            "Value": {
+                "id": "492eddd4-8b8a-41e6-9cd6-a9e196090446",
+                "resourcePath": "scripts\\scCreateEntity\\scCreateEntity.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
             "Value": {
                 "id": "17b79dad-d633-41b3-87c1-2d94519db5e2",
@@ -212,6 +236,14 @@
                 "id": "54595599-2f7e-4ecf-8470-3b2ed54fd046",
                 "resourcePath": "views\\718ecd16-389c-4177-8d6f-9b09245a774b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "71daa5d6-41af-4967-9589-df1fa86d8762",
+            "Value": {
+                "id": "8b2f4998-1bd6-480e-8ebd-9fdae90076e1",
+                "resourcePath": "scripts\\scAddEntitiesToRoom\\scAddEntitiesToRoom.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -260,6 +292,14 @@
                 "id": "f30bf17f-362c-4470-878a-d703d810a6c3",
                 "resourcePath": "sprites\\spCalibriFont\\spCalibriFont.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "7ed8f209-79ab-400a-bb71-f5eafd0ca374",
+            "Value": {
+                "id": "612cd1fe-8697-4c8a-9f8c-9abf402fa6a4",
+                "resourcePath": "views\\7ed8f209-79ab-400a-bb71-f5eafd0ca374.yy",
+                "resourceType": "GMFolder"
             }
         },
         {
@@ -319,6 +359,14 @@
             }
         },
         {
+            "Key": "9e5f898c-9057-4fe8-97be-7db3e2d73fec",
+            "Value": {
+                "id": "e2a693c7-4e9c-4cc8-a091-8a299a345da2",
+                "resourcePath": "scripts\\scCheckIfEntityOccupiesTile\\scCheckIfEntityOccupiesTile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "a09ec818-06c9-4805-b411-d08b55f6cfb2",
             "Value": {
                 "id": "c0695b88-a203-4004-8c4f-9c37f4af4e5b",
@@ -371,6 +419,14 @@
             "Value": {
                 "id": "aff41783-3337-48b5-8aa9-a4b22c2eed8a",
                 "resourcePath": "scripts\\scGetFovDistance\\scGetFovDistance.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "c533e9ef-4bea-4dfb-8f88-eb4353faac24",
+            "Value": {
+                "id": "011e787c-ac49-4583-bc3e-979e3a07457c",
+                "resourcePath": "scripts\\scSetFieldsInGridRow\\scSetFieldsInGridRow.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -431,6 +487,14 @@
             }
         },
         {
+            "Key": "d24d00e2-074f-4fb0-b7a2-85c0761c7478",
+            "Value": {
+                "id": "0692de6b-ca50-48a0-af80-d614157db4bc",
+                "resourcePath": "scripts\\scInitialiseEntityStartingInfo\\scInitialiseEntityStartingInfo.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "d73087b5-7507-46c9-b2db-71e84642dcc1",
             "Value": {
                 "id": "5083cd65-43f9-4556-b7d0-a50cee20461e",
@@ -442,7 +506,7 @@
             "Key": "dec718d8-3e3d-44ff-91b6-7b5b0153115b",
             "Value": {
                 "id": "5a15a61b-db7a-4750-8496-a772e022dbd7",
-                "resourcePath": "scripts\\scMove\\scMove.yy",
+                "resourcePath": "scripts\\scEntityAttemptMove\\scEntityAttemptMove.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -516,22 +580,28 @@
         "8430e4a8-2a15-4627-a7ed-07531b28ed25",
         "adf58472-bbd3-4a38-bd51-9f3f6d428911",
         "dec718d8-3e3d-44ff-91b6-7b5b0153115b",
+        "3385a5b4-3439-4767-a067-393da202fd17",
         "046c3777-b40c-4a6e-a36e-019d617118a8",
         "710dbe6a-6a11-4906-9595-dd2ddf1435a2",
         "332e21a8-1427-42db-bfa9-6ab63a4acbd4",
         "81bfef28-858d-4aa4-8196-40379470a5b1",
         "2009fac7-4901-4dc1-b6bf-3d0e1c1c83fc",
         "c57e83cc-0645-4008-a5bf-86cc32578599",
+        "71daa5d6-41af-4967-9589-df1fa86d8762",
+        "5dcf8abd-acca-43f3-90b4-24b4d94c6de1",
+        "d24d00e2-074f-4fb0-b7a2-85c0761c7478",
         "520031d7-c567-4503-92e3-e7d7fca4612c",
         "199e2b0b-dd58-458e-8a20-aa1f59ebb250",
         "57066662-abb5-4109-b99c-688b46c090be",
         "3ffb155f-ecfb-447a-88e9-6d40f2f060fa",
+        "c533e9ef-4bea-4dfb-8f88-eb4353faac24",
         "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
         "f3f925f7-7353-421d-81ab-7e4cd2a3330f",
         "80e09f8d-0966-4dc3-9934-891fc36fcccb",
         "c9f3a108-7450-43c0-a14b-539b7453b7e6",
         "0ad94bb1-2ca7-41ff-9498-5511562809cf",
-        "bde49972-44dc-4c6a-9978-7f720073f5ee"
+        "bde49972-44dc-4c6a-9978-7f720073f5ee",
+        "9e5f898c-9057-4fe8-97be-7db3e2d73fec"
     ],
     "tutorial": ""
 }

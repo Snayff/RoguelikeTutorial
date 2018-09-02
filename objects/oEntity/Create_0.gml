@@ -1,6 +1,9 @@
 /// @desc
 
-startingGridX = 0;
-startingGridY = 0;
-endingGridX = 0;
-endingGridY = 0;
+startingGridX = -1;
+startingGridY = -1;
+endingGridX = -1;
+endingGridY = -1;
+name = -1;
+isBlockingMovement = false; 
+image_speed = 0;

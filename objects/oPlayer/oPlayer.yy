@@ -5,16 +5,6 @@
     "name": "oPlayer",
     "eventList": [
         {
-            "id": "90303cfe-ed9c-4df8-9102-fe6dfbc4f6d8",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "44eb0ac4-3796-4ed4-ac40-22742e88774b"
-        },
-        {
             "id": "01aee2a3-9165-4345-a3d1-7396e3fa4dd5",
             "modelName": "GMEvent",
             "mvc": "1.0",
