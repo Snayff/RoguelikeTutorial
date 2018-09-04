@@ -56,6 +56,9 @@ enum entityStartingInfo {
 	sprite,
 	subimage,
 	colour,
+	maxHp,
+	defense, 
+	strength,
 	enumSize
 }
 

@@ -71,7 +71,7 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 		
 		//if first room add player, if not add tunnel between rooms and populate with monsters
 		if oControllerTile.numberOfRooms == 0 {
-			scCreateEntity(_centreX, _centreY, entityName.player);
+			scCreateEntity(_centreX, _centreY, entityName.player, true, scFighter, -1 );
 		} else {
 			var _previousRoomCentreX = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreX, ds_grid_height(oControllerTile.roomInfoGrid)-1);
 			var _previousRoomCentreY = ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.centreY, ds_grid_height(oControllerTile.roomInfoGrid)-1);

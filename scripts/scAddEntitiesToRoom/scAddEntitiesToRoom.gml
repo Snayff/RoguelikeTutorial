@@ -21,9 +21,9 @@ var _placementX = -1;
 var _placementY = -1;
 
 
-//add entities to _entitiy array
-for (var _i = 2; _i < argument_count; _i++) {
-	_entity[_i - 2] = argument[_i]; //2 is the number of arguments before entity	
+//add entities to _entity array
+for (var _i = 6; _i < argument_count; _i++) {
+	_entity[_i - 6] = argument[_i]; //6 is the number of arguments before entity	
 	
 }
 
@@ -38,12 +38,12 @@ for (_i = 0; _i < _numberOfEntitiesToPlace; _i++) {
 	_placementY = irandom_range(_roomStartY + 1, _roomEndY - 1);
 	
 	if !scCheckIfEntityOccupiesTile(_placementX, _placementY) {
-		//random number to determine what entitiy to generate from possible options
+		//random number to determine what entitiy to generate from possible options //***need to make entity choosing dynamic
 		if irandom(100) < 80 {
-			scCreateEntity(_placementX, _placementY, entityName.orc);
+			scCreateEntity(_placementX, _placementY, _entity[0], true, scFighter, scBasicMonster);
 			
 		} else {
-			scCreateEntity(_placementX, _placementY, entityName.troll);	
+			scCreateEntity(_placementX, _placementY, _entity[1], true, scFighter, scBasicMonster);	
 		}
 	}
 }
