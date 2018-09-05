@@ -32,5 +32,13 @@ if global.currentGameState == gameState.playerTurn {
 		scEntityAttemptMove(_player, 0, -1);
 	} else if inpDown == true {
 		scEntityAttemptMove(_player, 0, 1);	
+	} else if inpUpRight == true {
+		scEntityAttemptMove(_player, 1, -1);	
+	} else if inpUpLeft == true {
+		scEntityAttemptMove(_player, -1, -1);	
+	} else if inpDownRight == true {
+		scEntityAttemptMove(_player, 1, 1);	
+	} else if inpDownLeft == true {
+		scEntityAttemptMove(_player, -1, 1);	
 	}
 }

@@ -6,10 +6,16 @@
 
 //KEYBOARD
 
-kbRightPressed = keyboard_check_pressed(vk_right);
-kbLeftPressed = keyboard_check_pressed(vk_left);
-kbUpPressed = keyboard_check_pressed(vk_up);
-kbDownPressed = keyboard_check_pressed(vk_down);
+kbRightPressed = keyboard_check_pressed(vk_right) || keyboard_check_pressed(vk_numpad6);
+kbLeftPressed = keyboard_check_pressed(vk_left) || keyboard_check_pressed(vk_numpad4);
+kbUpPressed = keyboard_check_pressed(vk_up) || keyboard_check_pressed(vk_numpad8);
+kbDownPressed = keyboard_check_pressed(vk_down) || keyboard_check_pressed(vk_numpad2);
+kbUpRightPressed = keyboard_check_pressed(vk_numpad9);
+kbUpLeftPressed =  keyboard_check_pressed(vk_numpad7);
+kbDownRightPressed =  keyboard_check_pressed(vk_numpad3);
+kbDownLeftPressed = keyboard_check_pressed(vk_numpad1);
+
+
 /*
 kbRightHeld = keyboard_check(vk_right);
 kbLeftHeld = keyboard_check(vk_left);
@@ -20,8 +26,12 @@ inpRight = kbRightPressed;
 inpLeft = kbLeftPressed;
 inpUp = kbUpPressed;
 inpDown = kbDownPressed;
+inpUpRight = kbUpRightPressed;
+inpUpLeft = kbUpLeftPressed;
+inpDownRight = kbDownRightPressed;
+inpDownLeft = kbDownLeftPressed;
 inpCancel = keyboard_check_pressed(vk_escape);
-inpFullScreen = keyboard_check_pressed(ord("F"));//keyboard_check_pressed(vk_enter) && keyboard_check_pressed(vk_alt);
+inpFullScreen = keyboard_check_pressed(ord("F"));
 
 /*
 //GAMEPAD

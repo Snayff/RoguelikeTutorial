@@ -10,5 +10,5 @@ var _startingTileY = argument2;
 //scDebugMsg("CREATE H TUNNEL:");
 
 ds_grid_set_region(oControllerTile.tileGrid, _startingTileX, _startingTileY, _endingTileX, _startingTileY, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
-
+mp_grid_clear_rectangle(oControllerEntity.movementGrid, _startingTileX, _startingTileY, _endingTileX, _startingTileY );
 //scDebugMsg("x1: ", _startingTileX, " x2: ", _endingTileX, " y1: ", _startingTileY, " y2: ", _startingTileY  );

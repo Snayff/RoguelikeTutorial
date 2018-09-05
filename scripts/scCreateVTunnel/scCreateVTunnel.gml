@@ -10,6 +10,6 @@ var _startingTileX = argument2;
 //scDebugMsg("CREATE V TUNNEL:");
 
 ds_grid_set_region(oControllerTile.tileGrid, _startingTileX, _startingTileY, _startingTileX , _endingTileY, (~ISBLOCKINGMOVEMENT) & (~ISBLOCKINGSIGHT) );
-
+mp_grid_clear_rectangle(oControllerEntity.movementGrid,  _startingTileX, _startingTileY, _startingTileX , _endingTileY)
 //scDebugMsg("x1: ", _startingTileX, " x2: ", _startingTileX, " y1: ", _startingTileY, " y2: ", _endingTileY );
 

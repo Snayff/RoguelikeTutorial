@@ -12,5 +12,5 @@ var _i = 3; //count of arguments preceeding notation
  
  
 for (; _i < argument_count; _i++){
-	_grid[# _gridX, _gridY] |= argument[_i];
+	_grid[# _gridX, _gridY] |= argument[_i]; 
 }

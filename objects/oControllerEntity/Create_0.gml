@@ -3,7 +3,6 @@
 
 scDebugMsg("CREATE CONTROLLER ENTITY:");
 
-
 //create entity list
 entityList = ds_list_create()
 
@@ -17,4 +16,6 @@ scInitialiseEntityStartingInfo() ;
 //create player var for referencing
 player = -1;
 
+//create movement grid
+movementGrid = mp_grid_create(0,0, global.mapWidthInTiles, global.mapHeightInTiles, TILESIZE, TILESIZE); 
 

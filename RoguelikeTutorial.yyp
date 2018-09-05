@@ -47,6 +47,14 @@
             }
         },
         {
+            "Key": "099d7230-27c6-4e5f-b95d-557d75127b24",
+            "Value": {
+                "id": "2ae94da7-ed7b-47e6-b2dd-36792ef56a9d",
+                "resourcePath": "views\\099d7230-27c6-4e5f-b95d-557d75127b24.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "0ab754b7-b3d4-4ef9-80dc-cd43f0dfd184",
             "Value": {
                 "id": "65ed4d46-6db1-453e-9f81-efb243dfcea3",
@@ -91,6 +99,14 @@
             "Value": {
                 "id": "de6c2e1a-99ff-45c7-983b-49a9756ed11f",
                 "resourcePath": "scripts\\scConvertToTile\\scConvertToTile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "19fa7068-5bbf-42ab-b418-6cb55e343888",
+            "Value": {
+                "id": "98628d0f-0fe4-4fb9-80c7-d0cb17ec3317",
+                "resourcePath": "scripts\\scDetermineDirectionToEntity\\scDetermineDirectionToEntity.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -503,6 +519,14 @@
             }
         },
         {
+            "Key": "ce23e742-22f8-467c-bb16-0daf7f7c6eee",
+            "Value": {
+                "id": "52f1c38c-398e-4ee7-82f7-6599515c0d9e",
+                "resourcePath": "scripts\\scDistanceToEntity\\scDistanceToEntity.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "ce369caa-abd9-49e2-a8bc-9c5855e7d84a",
             "Value": {
                 "id": "3dbfe148-9c0e-44b5-8d79-2ca3d83324b9",
@@ -621,6 +645,7 @@
         "adf58472-bbd3-4a38-bd51-9f3f6d428911",
         "dec718d8-3e3d-44ff-91b6-7b5b0153115b",
         "3385a5b4-3439-4767-a067-393da202fd17",
+        "19fa7068-5bbf-42ab-b418-6cb55e343888",
         "046c3777-b40c-4a6e-a36e-019d617118a8",
         "710dbe6a-6a11-4906-9595-dd2ddf1435a2",
         "332e21a8-1427-42db-bfa9-6ab63a4acbd4",
@@ -635,6 +660,7 @@
         "57066662-abb5-4109-b99c-688b46c090be",
         "3ffb155f-ecfb-447a-88e9-6d40f2f060fa",
         "c533e9ef-4bea-4dfb-8f88-eb4353faac24",
+        "ce23e742-22f8-467c-bb16-0daf7f7c6eee",
         "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
         "f3f925f7-7353-421d-81ab-7e4cd2a3330f",
         "80e09f8d-0966-4dc3-9934-891fc36fcccb",

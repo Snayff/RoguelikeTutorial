@@ -30,8 +30,8 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			//is it an entity blocking movement
 			if _otherEntity.isBlockingMovement {
 				
-				//bump attack
-				scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") is blocking the target location [",_targetX, ",", _targetY, "].");
+				scDebugMsg(_entity, " hits ", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), " with vim and vigour!");
+				
 			} else {
 				scEntityMove(_entity,_targetX, _targetY );
 			}

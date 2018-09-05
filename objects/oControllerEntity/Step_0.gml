@@ -14,7 +14,7 @@ if global.currentGameState == gameState.enemyTurn {
 			with _entity {
 				script_execute(ai); //run ai 
 			}
-			//scDebugMsg(_entity.name, "(", _entity, ") waits patiently for something interesting to happen.", );
+			
 
 		}
 		

@@ -8,7 +8,8 @@
         "199e2b0b-dd58-458e-8a20-aa1f59ebb250",
         "57066662-abb5-4109-b99c-688b46c090be",
         "3ffb155f-ecfb-447a-88e9-6d40f2f060fa",
-        "c533e9ef-4bea-4dfb-8f88-eb4353faac24"
+        "c533e9ef-4bea-4dfb-8f88-eb4353faac24",
+        "ce23e742-22f8-467c-bb16-0daf7f7c6eee"
     ],
     "filterType": "GMScript",
     "folderName": "HelperFunctions",

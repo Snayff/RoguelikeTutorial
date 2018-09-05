@@ -38,7 +38,8 @@ for (_i = 0; _i < _numberOfEntitiesToPlace; _i++) {
 	_placementY = irandom_range(_roomStartY + 1, _roomEndY - 1);
 	
 	if !scCheckIfEntityOccupiesTile(_placementX, _placementY) {
-		//random number to determine what entitiy to generate from possible options //***need to make entity choosing dynamic
+		//random number to determine what entitiy to generate from possible options 
+		//***need to make entity choosing dynamic
 		if irandom(100) < 80 {
 			scCreateEntity(_placementX, _placementY, _entity[0], true, scFighter, scBasicMonster);
 			

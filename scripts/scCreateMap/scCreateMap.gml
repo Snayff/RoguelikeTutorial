@@ -7,9 +7,9 @@ var _room1 = 0;
 var _room2 = 0;
 
 
-//initialise tile array as walls
+//initialise tile array as walls and set walls as forbidden in movement grid
 ds_grid_set_region(oControllerTile.tileGrid, 0, 0, ds_grid_width(oControllerTile.tileGrid), ds_grid_height(oControllerTile.tileGrid), ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT);
-
+mp_grid_add_rectangle(oControllerEntity.movementGrid, 0,0, global.mapWidthInPixels, global.mapHeightInPixels);
 
 scDebugMsg("Tiles created as walls.");
 

@@ -54,9 +54,11 @@ if ds_grid_get(oControllerTile.roomInfoGrid, roomInfo.width, 0) <> 0 {
 if _widthOfRoom > 1 || _heightOfRoom > 1 {
 	//check no room intersect
 	if _intersectFound == false {
-	
+		
+		//add room to tileGrid and movementGrid
 		for (var _x = _startingTileX + 1; _x <= _startingTileX + (_widthOfRoom - 1) && _x <= global.mapWidthInTiles - 1; _x++) { //+1/-1 to ensure a wall is always left
 			for (var _y = _startingTileY + 1; _y <= _startingTileY + ( _heightOfRoom - 1) && _y <= global.mapHeightInTiles - 1; _y++) { //+1/-1 to ensure a wall is always left
+				mp_grid_clear_cell(oControllerEntity.movementGrid, _x, _y);
 				oControllerTile.tileGrid[# _x, _y] &= ~(ISBLOCKINGMOVEMENT | ISBLOCKINGSIGHT); //***change to function
 			
 			}

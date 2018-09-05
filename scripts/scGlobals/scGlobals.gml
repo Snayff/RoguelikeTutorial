@@ -4,6 +4,8 @@ global.font = font_add_sprite(spCalibriFont, ord("!"), false, 2);
 //map info
 global.mapWidthInTiles =  scConvertToTile(room_width);
 global.mapHeightInTiles = scConvertToTile(room_height);
+global.mapWidthInPixels =  room_width;
+global.mapHeightInPixels = room_height;
 
 //turn management
 global.currentGameState = gameState.playerTurn;
