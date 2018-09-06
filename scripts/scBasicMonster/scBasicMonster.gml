@@ -21,7 +21,7 @@ if scDistanceToEntity(oControllerEntity.player) < oControllerView.fovRadius + 3 
 	_entityRoomY = scConvertToXY(_entity.startingGridY);
 	
 	//create path to player
-	if mp_grid_path(oControllerEntity.movementGrid, _entity.path, _entityRoomX, _entityRoomY, scConvertToXY(oControllerEntity.player.startingGridX),scConvertToXY(oControllerEntity.player.startingGridY), true) {
+	if mp_grid_path(oControllerEntity.movementGrid, _entity.path, _entityRoomX, _entityRoomY, scConvertToXY(oControllerEntity.player.endingGridX),scConvertToXY(oControllerEntity.player.endingGridY), true) {
 		_pointX = path_get_point_x(_entity.path, 1);
 		_pointY = path_get_point_y(_entity.path, 1);
 		_targetX = sign(_pointX - _entityRoomX);
@@ -29,7 +29,7 @@ if scDistanceToEntity(oControllerEntity.player) < oControllerView.fovRadius + 3 
 		
 		scDebugMsg("Entity ", _entity, " used path finding for direction.");
 	
-	} else { //a* unsuccessful so walk directly towatds player
+	} else { //mp unsuccessful so walk directly towatds player
 		//get direction to move towards player
 		_targetDirection = scDetermineDirectionToEntity(_entity, oControllerEntity.player);
 		_targetX = _targetDirection[0];
