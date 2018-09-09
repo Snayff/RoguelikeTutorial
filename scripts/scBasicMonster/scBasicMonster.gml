@@ -29,7 +29,7 @@ if scDistanceToEntity(oControllerEntity.player) < oControllerView.fovRadius + 3 
 		
 		scDebugMsg("Entity ", _entity, " used path finding for direction.");
 	
-	} else { //mp unsuccessful so walk directly towatds player
+	} else { //mp unsuccessful so walk directly towards player
 		//get direction to move towards player
 		_targetDirection = scDetermineDirectionToEntity(_entity, oControllerEntity.player);
 		_targetX = _targetDirection[0];

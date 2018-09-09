@@ -1,12 +1,10 @@
-///@desc interpret input
+///@desc interpret keypresses and convert to events
 
 var _player = oControllerEntity.player;
-//get input values
-scGetInput();
 
 //game functions
 if inpCancel == true {
-	game_end()	
+	game_end()
 }
 if inpFullScreen == true {
 	switch window_get_fullscreen() {
@@ -18,12 +16,12 @@ if inpFullScreen == true {
 			break;
 	}
 
-	oViewController.alarm[0] = 1; // recenters display
+	oControllerView.alarm[0] = 1; // recenters display
 }
 
 
 if global.currentGameState == gameState.playerTurn {
-	//movement
+	// attempt movement
 	if inpRight == true {
 		scEntityAttemptMove(_player, 1, 0);
 	} else if inpLeft == true {

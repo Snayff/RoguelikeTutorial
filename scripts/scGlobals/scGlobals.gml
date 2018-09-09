@@ -10,6 +10,7 @@ global.mapHeightInPixels = room_height;
 //turn management
 global.currentGameState = gameState.playerTurn;
 
+
 //tile info
 #macro TILESIZE 32
 // tile bitmask notations
@@ -61,6 +62,7 @@ enum entityStartingInfo {
 	maxHp,
 	defense, 
 	strength,
+	deathSubImage,
 	enumSize
 }
 
@@ -68,6 +70,15 @@ enum entityStartingInfo {
 enum gameState{
 	playerTurn,
 	enemyTurn,
+	playerDead,
 	enumSize
+	
+}
+
+// render order - higher number is lower down
+enum depthPosition {
+	dead = -1,
+	item = -2,
+	living = -3
 	
 }

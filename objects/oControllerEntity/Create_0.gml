@@ -16,6 +16,9 @@ scInitialiseEntityStartingInfo() ;
 //create player var for referencing
 player = -1;
 
+//who has current turn?
+turnHolder = -1;
+
 //create movement grid
 movementGrid = mp_grid_create(0,0, global.mapWidthInTiles, global.mapHeightInTiles, TILESIZE, TILESIZE); 
 

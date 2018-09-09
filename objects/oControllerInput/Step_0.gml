@@ -1,3 +1,5 @@
 /// @desc manage input
 
-scHandleInput();
+
+scGetInput();
+scProcessInput();

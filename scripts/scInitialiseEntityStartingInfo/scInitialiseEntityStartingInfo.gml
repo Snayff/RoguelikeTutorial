@@ -8,6 +8,7 @@ var _colour;
 var _maxHp;
 var _defense;
 var _strength;
+var _deathImage;
 
 entityStartingInfoGrid = ds_grid_create(entityStartingInfo.enumSize,entityName.enumSize );
 
@@ -22,7 +23,8 @@ _colour = c_white;
 _maxHp = 10;
 _defense = 1;
 _strength = 3;
-scSetFieldsInGridRow(_grid, entityName.player, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength);
+_deathImage = 37;
+scSetFieldsInGridRow(_grid, entityName.player, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage);
 
 //ord
 _name = entityName.orc;
@@ -32,7 +34,8 @@ _colour = c_aqua;
 _maxHp = 8;
 _defense = 0;
 _strength = 2;
-scSetFieldsInGridRow(_grid, entityName.orc, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength);
+_deathImage = 37;
+scSetFieldsInGridRow(_grid, entityName.orc, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage);
 
 //troll
 _name = entityName.troll;
@@ -42,4 +45,5 @@ _colour = c_fuchsia;
 _maxHp = 5;
 _defense = 0;
 _strength = 1;
-scSetFieldsInGridRow(_grid, entityName.troll, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength);
+_deathImage = 37;
+scSetFieldsInGridRow(_grid, entityName.troll, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage);

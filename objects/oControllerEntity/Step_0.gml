@@ -11,15 +11,27 @@ if global.currentGameState == gameState.enemyTurn {
 		
 		//check if entity has ai
 		if _entity.ai <> -1 {	
+			//assign turn to entity
+			oControllerEntity.turnHolder = _entity;
 			with _entity {
 				script_execute(ai); //run ai 
 			}
 			
+			//process event
+			with oControllerEvent {
+				scProcessEvents();
+			}
 
+		}
+		
+		//if player has died stop AI taking actions
+		if global.currentGameState == gameState.playerDead {
+			break;	
 		}
 		
 	}
 		
 	//update gameState
 	global.currentGameState = gameState.playerTurn;
+	oControllerEntity.turnHolder = oControllerEntity.player;
 }

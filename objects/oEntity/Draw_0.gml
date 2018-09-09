@@ -1,6 +1,8 @@
-/// @desc DEBUG
+/// @desc 
 
 draw_self();
+//show hp
+draw_text(x,y,string(hp));
 
 /*
 //draw movement path

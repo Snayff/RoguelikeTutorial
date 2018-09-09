@@ -1,4 +1,4 @@
-///@desc script for getting player input
+///@desc get key presses
 
 
 //---MOVEMENT---

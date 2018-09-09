@@ -6,7 +6,8 @@
     "children": [
         "71daa5d6-41af-4967-9589-df1fa86d8762",
         "5dcf8abd-acca-43f3-90b4-24b4d94c6de1",
-        "d24d00e2-074f-4fb0-b7a2-85c0761c7478"
+        "d24d00e2-074f-4fb0-b7a2-85c0761c7478",
+        "a28b53ac-300b-4ccb-bc0d-1ba0b0b8db6e"
     ],
     "filterType": "GMScript",
     "folderName": "Life",

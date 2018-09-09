@@ -27,8 +27,3 @@ _entity.y = scConvertToXY(_targetY);
 //update endingGrid* vars
 _entity.endingGridX = _targetX;
 _entity.endingGridY = _targetY;
-
-//update game state
-if global.currentGameState == gameState.playerTurn {
-		global.currentGameState = gameState.enemyTurn;
-}

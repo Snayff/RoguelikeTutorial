@@ -21,7 +21,12 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 		//check if another entity is in the way
 		if !scCheckIfEntityOccupiesTile(_targetX, _targetY) {
 			//move the entity to the new tile
-			scEntityMove(_entity,_targetX, _targetY );
+			var _move;
+			_move[0] = _targetX;
+			_move[1] = _targetY;
+			oControllerEvent.eventQueue[? "move"] = _move; 
+			
+			//scEntityMove(_entity,_targetX, _targetY );
 			
 			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") moved to [", _targetX, ",", _targetY, "]");
 		} else { // another entity is in target location
@@ -30,10 +35,13 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			//is it an entity blocking movement
 			if _otherEntity.isBlockingMovement {
 				
-				scDebugMsg(_entity, " hits ", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), " with vim and vigour!");
+				oControllerEvent.eventQueue[? "attack"] = _otherEntity;
 				
 			} else {
-				scEntityMove(_entity,_targetX, _targetY );
+				var _move;
+				_move[0] = _targetX;
+				_move[1] = _targetY;
+				oControllerEvent.eventQueue[? "move"] = _move; 
 			}
 		}
 	} else {

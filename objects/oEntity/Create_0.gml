@@ -6,6 +6,7 @@ endingGridX = -1;
 endingGridY = -1;
 name = -1;
 isBlockingMovement = false; 
+depthPos = -1;
 image_speed = 0;
 
 //movement info

@@ -49,6 +49,7 @@ ds_grid_set(oControllerEntity.entityGrid, _creationX, _creationY, _entity);
 //assign player instance ID to player variable
 if _entityName == entityName.player {
 	oControllerEntity.player = ds_list_find_value(oControllerEntity.entityList, 0);
+	oControllerEntity.turnHolder = ds_list_find_value(oControllerEntity.entityList, 0);
 } 
 
 //provide entity with initial info
@@ -58,6 +59,7 @@ _entity.startingGridY = _creationY;
 _entity.endingGridX = _creationX;
 _entity.endingGridY = _creationY;
 _entity.isBlockingMovement = _blocksMovement;
+_entity.depthPosition = depthPosition.living
 _entity.fighter = _componentFighter;
 _entity.ai = _ai;
 _entity.sprite_index = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.sprite , _entityName );
