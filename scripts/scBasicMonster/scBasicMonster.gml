@@ -10,7 +10,7 @@ var _entityRoomX;
 var _entityRoomY; 
 
 //only move within certain range of player
-if scDistanceToEntity(oControllerEntity.player) < oControllerView.fovRadius + 3 {
+if scDistanceToEntity(oControllerEntity.player) < oControllerEntity.player.fovRadius + 3 {
 	
 	//create path if one doesnt exist
 	if !path_exists(_entity.path) {

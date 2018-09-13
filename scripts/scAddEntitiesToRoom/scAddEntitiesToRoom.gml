@@ -33,18 +33,18 @@ _numberOfEntitiesToPlace= irandom_range(0, _maxMonsters);
 
 //Add entities to room
 for (_i = 0; _i < _numberOfEntitiesToPlace; _i++) {
-	//choose a location in the room (-/+1 to keep in room)
-	_placementX = irandom_range(_roomStartX + 1, _roomEndX - 1);
-	_placementY = irandom_range(_roomStartY + 1, _roomEndY - 1);
+	//choose a location in the room
+	_placementX = irandom_range(_roomStartX, _roomEndX);
+	_placementY = irandom_range(_roomStartY , _roomEndY );
 	
 	if !scCheckIfEntityOccupiesTile(_placementX, _placementY) {
 		//random number to determine what entitiy to generate from possible options 
 		//***need to make entity choosing dynamic
 		if irandom(100) < 80 {
-			scCreateEntity(_placementX, _placementY, _entity[0], true, scFighter, scBasicMonster);
+			scCreateEntity(_placementX, _placementY, entityName.orc, true, scFighter, scBasicMonster);
 			
 		} else {
-			scCreateEntity(_placementX, _placementY, _entity[1], true, scFighter, scBasicMonster);	
+			scCreateEntity(_placementX, _placementY, entityName.troll, true, scFighter, scBasicMonster);	
 		}
 	}
 }

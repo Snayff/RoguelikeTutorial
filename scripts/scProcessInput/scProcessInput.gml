@@ -16,7 +16,7 @@ if inpFullScreen == true {
 			break;
 	}
 
-	oControllerView.alarm[0] = 1; // recenters display
+	oControllerCamera.alarm[0] = 1; // recenters display
 }
 
 

@@ -6,17 +6,17 @@ scDebugMsg("CALCULATE FOV:");
 
 var _startX = oControllerEntity.player.startingGridX;
 var _startY = oControllerEntity.player.startingGridY;
-var _fovRange = oControllerView.fovRadius;
+var _fovRange = oControllerEntity.player.fovRadius;
 
 //reset all tiles back to not visible
-for (var _arrayHeight = ds_grid_height(oControllerView.viewGrid)-1; _arrayHeight >= 0; _arrayHeight--; ){
-	for (var _arrayLength = ds_grid_width(oControllerView.viewGrid)-1; _arrayLength >= 0; _arrayLength--; ){	
-		scRemoveBitmaskValue(oControllerView.viewGrid, _arrayLength, _arrayHeight, ISVISIBLE);
+for (var _arrayHeight = ds_grid_height(oControllerEntity.viewGrid)-1; _arrayHeight >= 0; _arrayHeight--; ){
+	for (var _arrayLength = ds_grid_width(oControllerEntity.viewGrid)-1; _arrayLength >= 0; _arrayLength--; ){	
+		scRemoveBitmaskValue(oControllerEntity.viewGrid, _arrayLength, _arrayHeight, ISVISIBLE);
 	}
 }
 
 //set current tile's vision
-scAddBitmaskValue(oControllerView.viewGrid, _startX, _startY, ISVISIBLE);
+scAddBitmaskValue(oControllerEntity.viewGrid, _startX, _startY, ISVISIBLE);
 
 //rotate through octants and set vision
 for(var _octant = 0; _octant < 8; _octant++){

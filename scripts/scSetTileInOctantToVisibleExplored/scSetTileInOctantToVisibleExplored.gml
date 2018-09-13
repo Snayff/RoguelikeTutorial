@@ -4,10 +4,9 @@
 ///@param octant octant number out of 8
 ///@param tileX origin tile X position
 ///@param tileY origin tile Y position
-///@param {bool}visible is visible?
+///@param {bool}visible isVisible?
 
 
-//FOV_SetVisible(_dx, _dy, _octant, _xpos, _ypos)
 
 var _dx = argument0;
 var _dy = argument1;
@@ -28,6 +27,5 @@ switch(_octant){
 }
 
 	
-scAddBitmaskValue(oControllerView.viewGrid, _nx, _ny, ISVISIBLE, ISEXPLORED);
-//oControllerView.viewGrid[# _nx, _ny] |= ISVISIBLE | ISEXPLORED;
+scAddBitmaskValue(oControllerEntity.viewGrid, _nx, _ny, ISVISIBLE, ISEXPLORED);
 //scDebugMsg("Updated viewGrid[", _newX, ",", _newY, "] from ", _currentViewValue, " to ",_newViewValue,"." )

@@ -191,6 +191,14 @@
             }
         },
         {
+            "Key": "32f9d9a0-9dd6-400f-bdde-5377685aa383",
+            "Value": {
+                "id": "282d0f27-2b56-4859-9906-17571447036b",
+                "resourcePath": "sprites\\spActor\\spActor.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "332e21a8-1427-42db-bfa9-6ab63a4acbd4",
             "Value": {
                 "id": "a1e32f3c-a094-452f-bd0c-0de96383c3c5",
@@ -407,10 +415,26 @@
             }
         },
         {
+            "Key": "6599a2f0-cab6-441b-88c1-bdb11aa9bf9a",
+            "Value": {
+                "id": "d61e5b96-9f10-48f4-aa92-72d546d4b049",
+                "resourcePath": "views\\6599a2f0-cab6-441b-88c1-bdb11aa9bf9a.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
             "Key": "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
             "Value": {
                 "id": "17b79dad-d633-41b3-87c1-2d94519db5e2",
                 "resourcePath": "scripts\\scDrawTile\\scDrawTile.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "6e6e9485-3976-4702-ae93-109a6b49e436",
+            "Value": {
+                "id": "9ded9f38-33eb-4d5c-ab46-b24131175f02",
+                "resourcePath": "scripts\\scDrawMessageLogWindow\\scDrawMessageLogWindow.yy",
                 "resourceType": "GMScript"
             }
         },
@@ -474,7 +498,7 @@
             "Key": "76a4d6df-581c-41dd-ba5b-cc1f96ba9726",
             "Value": {
                 "id": "33520c12-e80a-49c9-8393-1b3aa88d03b6",
-                "resourcePath": "objects\\oNpc\\oNpc.yy",
+                "resourcePath": "objects\\oActor\\oActor.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -652,6 +676,14 @@
                 "id": "db6952be-24f9-4659-ba26-205f570bbc74",
                 "resourcePath": "views\\a6972aab-f61e-453a-a682-2ba1d34ab370.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "a6a764fd-2a3f-4f9c-b1d7-c3ee1bea51c7",
+            "Value": {
+                "id": "162c1139-f0e7-4c4e-81c3-2a7f6a2a69b9",
+                "resourcePath": "scripts\\scDrawResourceBar\\scDrawResourceBar.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -850,7 +882,7 @@
             "Key": "d73087b5-7507-46c9-b2db-71e84642dcc1",
             "Value": {
                 "id": "5083cd65-43f9-4556-b7d0-a50cee20461e",
-                "resourcePath": "objects\\oControllerView\\oControllerView.yy",
+                "resourcePath": "objects\\oControllerCamera\\oControllerCamera.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -860,6 +892,14 @@
                 "id": "6a2a10f6-e8e5-4eb2-9ef9-c24d607e3ad8",
                 "resourcePath": "shaders\\shd_imgui\\shd_imgui.yy",
                 "resourceType": "GMShader"
+            }
+        },
+        {
+            "Key": "dd4c5255-c6d7-4899-921b-c28f8bdf66b4",
+            "Value": {
+                "id": "c8c4ca80-d036-46ed-8553-9802de27e10b",
+                "resourcePath": "objects\\oControllerUI\\oControllerUI.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -875,6 +915,14 @@
             "Value": {
                 "id": "52ac2611-b751-44b6-a2b5-1cbd6c40915a",
                 "resourcePath": "views\\e165ff83-8b93-4da5-8018-5da6bf6681b4.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e285487e-deec-4a82-ad83-147392177329",
+            "Value": {
+                "id": "0f2a4b24-a9e0-4735-98c2-3957a0c168bb",
+                "resourcePath": "views\\e285487e-deec-4a82-ad83-147392177329.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -923,6 +971,14 @@
             "Value": {
                 "id": "6981488c-6fd1-4146-ab32-e6720810dec3",
                 "resourcePath": "views\\f07036d7-9591-460d-80c8-b30918f8d984.yy",
+                "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "f2808224-d2f6-4c4d-9bfb-9d594f470260",
+            "Value": {
+                "id": "5964686d-ce58-4909-ad59-637fa5a3d7e0",
+                "resourcePath": "views\\f2808224-d2f6-4c4d-9bfb-9d594f470260.yy",
                 "resourceType": "GMFolder"
             }
         },
@@ -1012,6 +1068,8 @@
         "ce23e742-22f8-467c-bb16-0daf7f7c6eee",
         "647e9c57-cfdd-40f2-b1dc-9ed331d157cf",
         "6d8e02c3-6bd2-4135-a0d7-ae4a5022f9db",
+        "a6a764fd-2a3f-4f9c-b1d7-c3ee1bea51c7",
+        "6e6e9485-3976-4702-ae93-109a6b49e436",
         "f3f925f7-7353-421d-81ab-7e4cd2a3330f",
         "80e09f8d-0966-4dc3-9934-891fc36fcccb",
         "c9f3a108-7450-43c0-a14b-539b7453b7e6",
@@ -1020,8 +1078,6 @@
         "9e5f898c-9057-4fe8-97be-7db3e2d73fec",
         "4c775a20-8301-45c2-b2a3-bec1e81a0cd1",
         "448d4779-07fc-417f-a0dd-b4885786e003",
-        "3bf562d0-631e-49b6-a64f-f6fc359b748c",
-        "bf6f3c0b-78b6-4a65-99db-7c1a83908747",
         "81b8662b-1eb8-416c-8cad-6b3602cdacb4",
         "54d4842c-6dfd-41a3-b54b-55744d940586",
         "13a264e2-83f6-4961-b16d-63792ab83aee",
@@ -1029,7 +1085,9 @@
         "083c9710-1675-404a-a14b-b803f1bbc7e8",
         "4ef705e3-3823-447a-bd5b-3da1f3374a1e",
         "b84ebe76-26a8-4253-a559-58627ded0fa9",
-        "5ec5071b-6ee8-40f7-9067-495de1a2f285"
+        "5ec5071b-6ee8-40f7-9067-495de1a2f285",
+        "3bf562d0-631e-49b6-a64f-f6fc359b748c",
+        "bf6f3c0b-78b6-4a65-99db-7c1a83908747"
     ],
     "tutorial": ""
 }

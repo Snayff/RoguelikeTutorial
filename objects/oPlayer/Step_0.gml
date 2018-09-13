@@ -3,7 +3,7 @@
 
 if startingGridX <> endingGridX || startingGridY <> endingGridY {
 		
-		oControllerView.fovRecompute = true;
+		oControllerEntity.fovRecompute = true;
 		
 		startingGridX = endingGridX;
 		startingGridY = endingGridY;

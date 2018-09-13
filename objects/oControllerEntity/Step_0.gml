@@ -1,4 +1,4 @@
-/// @desc update entities 
+/// @desc update entities  & fov
 
 var _entity = -1;
 
@@ -18,9 +18,9 @@ if global.currentGameState == gameState.enemyTurn {
 			}
 			
 			//process event
-			with oControllerEvent {
+			//with oControllerEvent {
 				scProcessEvents();
-			}
+			//}
 
 		}
 		
@@ -34,4 +34,11 @@ if global.currentGameState == gameState.enemyTurn {
 	//update gameState
 	global.currentGameState = gameState.playerTurn;
 	oControllerEntity.turnHolder = oControllerEntity.player;
+}
+
+//recalculate FOV
+if fovRecompute == true {
+	scCalculateFov();	
+	
+	fovRecompute = false; //turn flag off
 }

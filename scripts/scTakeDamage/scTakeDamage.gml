@@ -9,6 +9,5 @@ _entity.hp -= _damage;
 
 //record death in event queue
 if _entity.hp <= 0 {
-	oControllerEvent.eventQueue[? "dead"] = _entity;	
-	
+	oControllerEvent.eventQueue[? "dead"] = _entity;		
 }

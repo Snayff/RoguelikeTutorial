@@ -13,7 +13,7 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 		_xPos = scConvertToXY(_tileX);
 		_yPos = scConvertToXY(_tileY);
 		_tileValue = ds_grid_get(oControllerTile.tileGrid, _tileX, _tileY);
-		_viewValue = ds_grid_get(oControllerView.viewGrid, _tileX, _tileY);
+		_viewValue = ds_grid_get(oControllerEntity.viewGrid, _tileX, _tileY);
 		_entityValue = ds_grid_get(oControllerEntity.entityGrid, _tileX, _tileY);
 
 		//can we see the tile

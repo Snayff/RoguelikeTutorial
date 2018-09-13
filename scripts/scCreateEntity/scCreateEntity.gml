@@ -32,7 +32,7 @@ var _entity = -1;
 if _entityName == entityName.player {
 	_entityObject = oPlayer;
 } else {
-	_entityObject = oNpc;	
+	_entityObject = oActor;	
 }
 
 //create entity instance

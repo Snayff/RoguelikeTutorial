@@ -82,3 +82,9 @@ enum depthPosition {
 	living = -3
 	
 }
+
+enum resourceType {
+	hp,
+	enumSize
+	
+}

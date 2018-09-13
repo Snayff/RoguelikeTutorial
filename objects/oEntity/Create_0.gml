@@ -8,6 +8,7 @@ name = -1;
 isBlockingMovement = false; 
 depthPos = -1;
 image_speed = 0;
+fovRadius = 5; //how far entity can see, i.e. how much is shown on screen
 
 //movement info
 path = -1;
