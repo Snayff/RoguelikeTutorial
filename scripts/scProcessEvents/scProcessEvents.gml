@@ -53,7 +53,9 @@ if !is_undefined(_dead) {
 //if message  has a value
 if !is_undefined(_message) {
 	
-	
+	var _arrayLength = array_length_1d(oControllerUI.stringArray);
+	oControllerUI.stringArray[_arrayLength] = _message;
+	oControllerUI.newMessageAdded = true;
 	ds_map_delete(oControllerEvent.eventQueue, "message");
 	
 	scDebugMsg("Message event processed");

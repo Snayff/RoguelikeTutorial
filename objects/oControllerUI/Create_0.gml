@@ -20,6 +20,9 @@ for (var _i = 1; _i < 20; _i++) {
 //build first X lines from array from start position
 maxLogLines = 10;
 stringArrayCounter = 0;
+stringArray[0] = "Welcome to [c_orange]Roguelike Tutorial[]";
+newMessageAdded = false;
+
 var _string = "";
 
 for (var _i = 0; _i < min(array_length_1d(stringArray), maxLogLines); _i++) {
