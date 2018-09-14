@@ -10,7 +10,8 @@
         "c0535b5d-b08a-4014-9d9f-99cdecd00ade",
         "8cb24722-5344-437b-b3c0-3a0ba75927f5",
         "042859e1-dfa1-4e58-a090-6972158b4bb0",
-        "074ef5b5-8f06-4a54-8458-7cebdf14abc5"
+        "074ef5b5-8f06-4a54-8458-7cebdf14abc5",
+        "435cb7c4-8f5e-4305-abdb-1dd7faba29fc"
     ],
     "filterType": "GMScript",
     "folderName": "Scribble",

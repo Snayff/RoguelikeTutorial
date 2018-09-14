@@ -2,3 +2,4 @@
 
 window_center();
 
+display_set_gui_size(idealWidth, idealHeight);
