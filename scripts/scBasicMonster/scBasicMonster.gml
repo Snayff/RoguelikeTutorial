@@ -41,4 +41,7 @@ if scDistanceToEntity(oControllerEntity.player) < oControllerEntity.player.fovRa
 	//attempt to move
 	scEntityAttemptMove(_entity,_targetX, _targetY );
 	
+} else {
+	scIncrementTurn();	
+	
 }

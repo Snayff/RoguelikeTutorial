@@ -1,10 +1,11 @@
 /// @desc
 //intial info
+name = -1;
+number = -1;
 startingGridX = -1;
 startingGridY = -1;
 endingGridX = -1;
 endingGridY = -1;
-name = -1;
 isBlockingMovement = false; 
 depthPos = -1;
 image_speed = 0;

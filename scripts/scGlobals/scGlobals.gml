@@ -25,6 +25,8 @@ global.currentGameState = gameState.playerTurn;
 #macro COLOUR_DARKGROUND make_color_rgb(50,50,50)
 #macro COLOUR_LIGHTWALL make_color_rgb(130, 110, 50)
 #macro COLOUR_LIGHTGROUND make_color_rgb(200, 180, 50)
+#macro COLOUR_NAME_ENTITY "[$964a15]"
+#macro COLOUR_NAME_PLAYER "[$671596]"
 
 //roomInfoGrid enum
 enum roomInfo {
@@ -45,7 +47,7 @@ enum tileInfo {
 }
 
 //entity names
-enum entityName {
+enum entityNumber {
 	player,
 	orc,
 	troll,

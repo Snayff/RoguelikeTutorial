@@ -1,20 +1,13 @@
 /// @desc
 
-var _edgeSize = 10;
-var _logWidth = 240;
-var _logHeight = 180;
-var _logStartX = oControllerCamera.cameraWidth - _logWidth - _edgeSize;
-var _logStartY = oControllerCamera.cameraHeight - _logHeight - _edgeSize;
-var _logBackColour = c_black;
-var _logOutlineColour = c_white;
-var _logAlpha = 0.5;
 
-scDrawMessageLogWindow(_logStartX, _logStartY, _logWidth, _logHeight, _logBackColour, _logOutlineColour,  _logAlpha);
+
+scDrawMessageLogWindow(logStartX, logStartY, logWidth, logHeight, logBackColour, logOutlineColour,  logAlpha);
 
 var _barWidth = 120;
 var _barHeight = 20;
-var _startX = (_logStartX + _logWidth) - _barWidth;
-var _startY = oControllerCamera.cameraHeight - (_barHeight * 2) - _logHeight;
+var _startX = (logStartX + logWidth) - _barWidth;
+var _startY = oControllerCamera.cameraHeight - (_barHeight * 2) - logHeight;
 var _fillColourMin = c_red;
 var _fillColourMax = c_green;
 var _backColour = c_black;
@@ -22,4 +15,8 @@ var _backColour = c_black;
 scDrawResourceBar(resourceType.hp, _startX, _startY, _barWidth, _barHeight,_fillColourMin, _fillColourMax, _backColour );
 
 
-scribble_draw( oExample.json, oExample.x, oExample.y );
+//scribble_draw( oExample.json, oExample.x, oExample.y );
+draw_set_font(fTestA);
+draw_set_valign(fa_top);
+draw_set_halign(fa_left);
+draw_text_ext(logStartX , logStartY , messageString, -1, logWidth);

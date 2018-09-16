@@ -90,7 +90,7 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 			scDebugMsg("Tunnel created between Room ",ds_grid_height(oControllerTile.roomInfoGrid) -2, " and Room ", ds_grid_height(oControllerTile.roomInfoGrid)-1 );
 			
 			//add entities to room
-			scAddEntitiesToRoom(_maxMonsters, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom,  entityName.orc, entityName.troll);
+			scAddEntitiesToRoom(_maxMonsters, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom,  entityNumber.orc, entityNumber.troll);
 		}
 		
 		//add to roomInfoGrid

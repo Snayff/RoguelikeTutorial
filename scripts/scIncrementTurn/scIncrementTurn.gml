@@ -1,5 +1,10 @@
 
 //update game state
-if global.currentGameState == gameState.playerTurn {
-		global.currentGameState = gameState.enemyTurn;
-}
+
+scDebugMsg(oControllerEntity.turnHolder,  " wants to increment turn");
+//if global.currentGameState == gameState.playerTurn {
+//		scDebugMsg("increment turn");
+//		global.currentGameState = gameState.enemyTurn;
+//}
+
+oControllerEntity.moveToNextTurn = true;

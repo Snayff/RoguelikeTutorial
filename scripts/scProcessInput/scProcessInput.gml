@@ -20,7 +20,8 @@ if inpFullScreen == true {
 }
 
 
-if global.currentGameState == gameState.playerTurn {
+//if global.currentGameState == gameState.playerTurn {
+if oControllerEntity.turnHolder = oControllerEntity.player && global.currentGameState <> gameState.playerDead{
 	// attempt movement
 	if inpRight == true {
 		scEntityAttemptMove(_player, 1, 0);

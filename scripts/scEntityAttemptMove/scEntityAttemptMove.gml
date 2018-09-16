@@ -26,8 +26,6 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			_move[1] = _targetY;
 			oControllerEvent.eventQueue[? "move"] = _move; 
 			
-			//scEntityMove(_entity,_targetX, _targetY );
-			
 			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") moved to [", _targetX, ",", _targetY, "]");
 		} else { // another entity is in target location
 			_otherEntity = ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY)
@@ -45,8 +43,11 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			}
 		}
 	} else {
-		scDebugMsg("A tile is blocking the target location [",_targetX, ",", _targetY, "]." )	;
+		scDebugMsg("A tile is blocking the target location [",_targetX, ",", _targetY, "]." );
+		if _entity.name <> "player" {
+			scIncrementTurn();
+		}
 	}
 } else {
-	scDebugMsg("The target location exceeds the map limits [",_targetX, ",", _targetY, "].")	;
+	scDebugMsg("The target location exceeds the map limits [",_targetX, ",", _targetY, "].");
 }

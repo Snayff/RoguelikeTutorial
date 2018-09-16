@@ -3,8 +3,8 @@
 //change sprite colour
 var _player = oControllerEntity.player;
 _player.image_blend = c_red;
-var _message = "You have died.";
+var _msg = "You have died.";
 
-oControllerEvent.eventQueue[? "message"] = _message;
+scAddMessageToEventQueue(_msg);
 
 global.currentGameState = gameState.playerDead;
