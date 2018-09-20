@@ -21,6 +21,9 @@ ground[tileInfo.subImage] = 0;
 roomInfoGrid = ds_grid_create(roomInfo.enumSize, 1);// x, y, centreX, centreY
 tileGrid = ds_grid_create(global.mapWidthInTiles, global.mapHeightInTiles);
 
+//what tiles are selected?
+tileSelectedX = 0;
+tileSelectedY = 0;
 
 
 //create the map

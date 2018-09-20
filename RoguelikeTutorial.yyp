@@ -866,7 +866,7 @@
             "Key": "6e6e9485-3976-4702-ae93-109a6b49e436",
             "Value": {
                 "id": "9ded9f38-33eb-4d5c-ab46-b24131175f02",
-                "resourcePath": "scripts\\scDrawMessageLogWindow\\scDrawMessageLogWindow.yy",
+                "resourcePath": "scripts\\scDrawWindow\\scDrawWindow.yy",
                 "resourceType": "GMScript"
             }
         },

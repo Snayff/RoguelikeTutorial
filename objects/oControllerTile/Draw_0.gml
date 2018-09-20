@@ -47,7 +47,7 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 			//ENTITIES
 			if _entityValue <> 0 {
 				//set entity to visible
-				_entityValue.visible = false;
+				_entityValue.visible = true;
 			}
 			
 		} else { //can't see & haven't seen

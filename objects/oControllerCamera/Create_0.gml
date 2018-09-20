@@ -5,8 +5,8 @@ scDebugMsg("CREATE CONTROLLER CAMERA:");
 scInitialiseDisplay();
 scInitialiseCamera();
 
-cameraWidth = idealWidth;
-cameraHeight = idealHeight;
+cameraWidth = idealWidth ;
+cameraHeight = idealHeight ;
 
 
 //Set the port bounds of view 0 

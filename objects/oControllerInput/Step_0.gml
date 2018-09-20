@@ -3,3 +3,5 @@
 
 scGetInput();
 scProcessInput();
+
+scDebugMsg("exists at ", x, y);

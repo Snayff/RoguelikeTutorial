@@ -56,7 +56,7 @@ enum entityNumber {
 }
 
 //entity info
-enum entityStartingInfo {
+enum actorStat {
 	name,
 	sprite,
 	subimage,
@@ -65,6 +65,7 @@ enum entityStartingInfo {
 	defense, 
 	strength,
 	deathSubImage,
+	hp,
 	enumSize
 }
 
@@ -85,8 +86,8 @@ enum depthPosition {
 	
 }
 
+//resource type
 enum resourceType {
 	hp,
 	enumSize
-	
 }

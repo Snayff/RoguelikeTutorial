@@ -65,9 +65,9 @@ _entity.isBlockingMovement = _blocksMovement;
 _entity.depthPosition = depthPosition.living
 _entity.fighter = _componentFighter;
 _entity.ai = _ai;
-_entity.sprite_index = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.sprite , _entityNumber );
-_entity.image_index  = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.subimage , _entityNumber );
-_entity.image_blend	 = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.colour , _entityNumber );
+_entity.sprite_index = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.sprite , _entityNumber );
+_entity.image_index  = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.subimage , _entityNumber );
+_entity.image_blend	 = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.colour , _entityNumber );
 
 //run intialisation scripts
 if _componentFighter <> -1 {

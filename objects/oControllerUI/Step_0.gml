@@ -1,6 +1,5 @@
 /// @desc update message log
 
-
 //var _scribLength = scribble_get_length( oExample.json );
 var _arrayLength = array_length_1d(stringArray);
 var _string = "";

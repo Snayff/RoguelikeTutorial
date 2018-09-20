@@ -33,6 +33,8 @@ inpDownLeft = kbDownLeftPressed;
 inpCancel = keyboard_check_pressed(vk_escape);
 inpFullScreen = keyboard_check_pressed(ord("F"));
 
+inpSelect = mouse_check_button_pressed(mb_left)
+
 /*
 //GAMEPAD
 // update dpad values to false to ensure reset when not using controller on new frame

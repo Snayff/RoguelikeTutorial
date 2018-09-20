@@ -1,9 +1,9 @@
 ///@desc fighter component - loads fighter data
 
-maxHp = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.maxHp , name);
-hp = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.maxHp , name);
-defense = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.defense , name);
-strength = ds_grid_get(oControllerEntity.entityStartingInfoGrid, entityStartingInfo.strength , name);
+maxHp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , name);
+hp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , name);
+defense = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.defense , name);
+strength = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.strength , name);
 
 
 

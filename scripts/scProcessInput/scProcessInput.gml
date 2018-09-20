@@ -41,3 +41,10 @@ if oControllerEntity.turnHolder = oControllerEntity.player && global.currentGame
 		scEntityAttemptMove(_player, -1, 1);	
 	}
 }
+
+//select tile
+if inpSelect {
+	oControllerTile.tileSelectedX = scConvertToTile(mouse_x);
+	oControllerTile.tileSelectedY = scConvertToTile(mouse_y);
+	
+}

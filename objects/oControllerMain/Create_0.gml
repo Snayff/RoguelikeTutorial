@@ -14,12 +14,12 @@ draw_set_valign(fa_middle);
 //random_set_seed();
 
 //load controllers
-instance_create_depth(0,0,0,oControllerEvent);
-instance_create_depth(0,0,0,oControllerEntity);
-instance_create_depth(0,0,0,oControllerTile);
-instance_create_depth(0,0,0,oControllerCamera);
-instance_create_depth(0,0,0,oControllerInput);
-instance_create_depth(0,0,0,oControllerUI);
+instance_create_depth(0,0,10,oControllerEvent);
+instance_create_depth(0,0,1,oControllerEntity);
+instance_create_depth(0,0,3,oControllerTile);
+instance_create_depth(0,0,10,oControllerCamera);
+instance_create_depth(0,0,10,oControllerInput);
+instance_create_depth(0,0,2,oControllerUI);
 
 
 

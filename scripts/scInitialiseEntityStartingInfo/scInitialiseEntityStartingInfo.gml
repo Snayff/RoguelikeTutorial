@@ -1,4 +1,4 @@
-///@desc initialise entityStartingInfoGrid 
+///@desc initialise actorStatGrid 
 
 
 var _name;
@@ -10,9 +10,9 @@ var _defense;
 var _strength;
 var _deathImage;
 
-entityStartingInfoGrid = ds_grid_create(entityStartingInfo.enumSize,entityNumber.enumSize );
+actorStatGrid = ds_grid_create(actorStat.enumSize,entityNumber.enumSize );
 
-var _grid = entityStartingInfoGrid;
+var _grid = actorStatGrid;
 
 // add entitiy stats to grid
 //player
