@@ -5,7 +5,6 @@
 
 var _player = oControllerEntity.player;
 
-// WITH AND _height VARIABLES
 var _width = idealWidth;
 var _halfWidth = _width*.5;
 var _height = idealHeight;
@@ -19,39 +18,39 @@ if _player <> -1 {
 	var _playerY = _halfHeight;
 }
 		
-	var _xBorderSize = _halfWidth;
+var _xBorderSize = _halfWidth;
 			
-	// establish pre-existing camera variables
-	var _cameraX = cameraX;
-	var _cameraY = cameraY;
-	var _cameraDestX = _cameraX;
-	var _cameraDestY = _cameraY;
+// establish pre-existing camera variables
+var _cameraX = cameraX;
+var _cameraY = cameraY;
+var _cameraDestX = _cameraX;
+var _cameraDestY = _cameraY;
 			
-	// establish camera destination
-	// X CAMERA
-	if (_playerX > _cameraX + _width - _xBorderSize){
-		_cameraDestX = _playerX + _xBorderSize - _width;
-	} else if (_playerX < _cameraX + _xBorderSize){
-		_cameraDestX = _playerX - _xBorderSize;
-	}
+// establish camera destination
+// X CAMERA
+if (_playerX > _cameraX + _width - _xBorderSize){
+	_cameraDestX = _playerX + _xBorderSize - _width;
+} else if (_playerX < _cameraX + _xBorderSize){
+	_cameraDestX = _playerX - _xBorderSize;
+}
 			
-	_cameraDestX = lerp(_cameraX, _cameraDestX, 0.07); 
+_cameraDestX = lerp(_cameraX, _cameraDestX, 0.07); 
 			
-	// Y CAMERA
-	_cameraDestY = lerp(_cameraY, _playerY - _halfHeight, 0.05 )
+// Y CAMERA
+_cameraDestY = lerp(_cameraY, _playerY - _halfHeight, 0.05 )
 			
-	// UPDATE CAMERA X/Y (BASE POSITION)
-	cameraX = _cameraDestX;
-	cameraY = _cameraDestY;
+// UPDATE CAMERA X/Y (BASE POSITION)
+cameraX = _cameraDestX;
+cameraY = _cameraDestY;
 	
-	//to clamp to room use this instead
-	//var _finalCameraX = round(clamp(_cameraDestX, 0, room_width - _width));
-	//var _finalCameraY = round(clamp(_cameraDestY, 0, room_height - _height));
+//to clamp to room use this instead
+//var _finalCameraX = round(clamp(_cameraDestX, 0, room_width - _width));
+//var _finalCameraY = round(clamp(_cameraDestY, 0, room_height - _height));
 
-	var _finalCameraX = _cameraDestX;
-	var _finalCameraY = _cameraDestY;
+var _finalCameraX = _cameraDestX;
+var _finalCameraY = _cameraDestY;
 	
-	camera_set_view_pos(camera, _finalCameraX , _finalCameraY )
+camera_set_view_pos(camera, _finalCameraX , _finalCameraY )
 
 #endregion
 

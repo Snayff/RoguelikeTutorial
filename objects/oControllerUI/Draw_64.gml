@@ -9,11 +9,15 @@ var _fontHeight = string_height("0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPA
 #region Tile Info
 var _selectTileX = oControllerTile.tileSelectedX;
 var _selectTileY = oControllerTile.tileSelectedY;
-scDebugMsg("select: ", _selectTileX, _selectTileY);
 
 var _tileValue = 0;
 var _viewValue = 0; 
 var _entityValue = 0;
+var _entityName = "";
+var _entityMaxHp = "";
+var _entityHp = "";
+var _entityStrengthString = "";
+var _entityDefenseString = "";
 
 if _selectTileX > 0 && _selectTileX < global.mapWidthInTiles && _selectTileY > 0 && _selectTileY < global.mapHeightInTiles {
 	_tileValue = ds_grid_get(oControllerTile.tileGrid, _selectTileX, _selectTileY);
@@ -35,11 +39,11 @@ if _viewValue & ISEXPLORED {
 	}
 	if _entityValue <> 0 {
 		
-		var _entityName = scConvertToString(_entityValue.name);
-		var _entityMaxHp = scConvertToString(_entityValue.maxHp);
-		var _entityHp = scConvertToString(_entityValue.hp);
-		var _entityStrengthString = scConvertToString("Str: ", _entityValue.strength);
-		var _entityDefenseString = scConvertToString("Def: ", _entityValue.defense);
+		_entityName = scConvertToString(_entityValue.name);
+		_entityMaxHp = scConvertToString(_entityValue.maxHp);
+		_entityHp = scConvertToString(_entityValue.hp);
+		_entityStrengthString = scConvertToString("Str: ", _entityValue.strength);
+		_entityDefenseString = scConvertToString("Def: ", _entityValue.defense);
 	}
 }
 
@@ -59,7 +63,7 @@ scDrawWindow(infoBoxStartX, infoBoxStartY, infoBoxWidth, infoBoxHeight, logBackC
 var _entityHeader = scConvertToString("Actor info");
 draw_text(infoBoxStartX + 2, infoBoxStartY + 2, _entityHeader);
 
-if _entityValue <> 0  {
+if _entityValue <> 0 && _entityName <> "" {
 	draw_text(infoBoxStartX  + 2, infoBoxStartY + _fontHeight + 2, _entityName);
 	draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *2) + 2, "HP: " + _entityHp + "/" + _entityMaxHp);
 	draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *3) + 2, _entityStrengthString + "  " + _entityDefenseString );

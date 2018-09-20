@@ -18,7 +18,7 @@ camera = camera_create_view((room_width/2) - _halfWidth, (room_height/2) - _half
 view_set_camera(0, camera);
 
 
-// START ON PLAYER IF THEY EXIST
+//start at the player if they exist
 if  oControllerEntity.player <> -1 {
 	var _player = oControllerEntity.player;
 	var _cameraDestX = clamp( _player.x - _halfWidth, 0, room_width - _width)
