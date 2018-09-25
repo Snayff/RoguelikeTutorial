@@ -1,5 +1,7 @@
-/// @desc update message log
+/// @desc msg log, show tile select, 
 
+
+#region message log
 //var _scribLength = scribble_get_length( oExample.json );
 var _arrayLength = array_length_1d(stringArray);
 var _string = "";
@@ -7,8 +9,6 @@ var _string = "";
 //if rendered all of previous message
 //if oExample.char_pos == _scribLength && newMessageAdded {
 if newMessageAdded {
-	
-	
 	
 	//if room left in log to show more
 	if _arrayLength < maxLogLines - runOverLines {
@@ -47,4 +47,11 @@ if newMessageAdded {
 	
 	//turn flag off
 	newMessageAdded = false
+}
+#endregion
+
+
+if oControllerEntity.player.movedThisTurn {
+	showTileSelect = false;	
+	
 }

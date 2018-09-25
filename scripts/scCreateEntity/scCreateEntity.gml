@@ -2,28 +2,11 @@
 ///@param creationX -  tile X to create entity
 ///@param creationY tile -  Y to create entity
 ///@param {real} entityNumber - entity's name from enum
-///@param {bool} blocksMovement -  entity blocks movement
-///@param *componentFighter - fighter component to include
-///@param *ai entity - AI
+
 
 var _creationX = argument[0];
 var _creationY = argument[1];
 var _entityNumber = argument[2];
-var _blocksMovement = argument[3];
-var _componentFighter = -1; //arg 4
-var _ai = -1; //arg5
-
-//optional arguments
-if argument_count > 3 {
-	if argument[4] <> -1 {
-		_componentFighter = argument[4];
-	}
-}
-if argument_count > 4 {
-	if argument[5] <> -1 {
-		_ai = argument[5];
-	}
-}
 
 var _entityObject = -1;
 var _entity = -1;
@@ -31,9 +14,12 @@ var _entity = -1;
 //check if creating player as player has different object
 if _entityNumber == entityNumber.player {
 	_entityObject = oPlayer;
-} else {
+} else if _entityNumber == entityNumber.healingPotion {
+	_entityObject = oItem;	
+}else  {
 	_entityObject = oActor;	
 }
+
 
 //create entity instance
 _entity = instance_create_depth(scConvertToXY(_creationX), scConvertToXY(_creationY), -100, _entityObject );
@@ -51,7 +37,9 @@ if _entityNumber == entityNumber.player {
 	oControllerEntity.player = ds_list_find_value(oControllerEntity.entityList, 0);
 	oControllerEntity.turnHolder = ds_list_find_value(oControllerEntity.entityList, 0);
 	_entity.name = "player";
-}  else {
+}  else if _entityNumber == entityNumber.healingPotion {
+	_entity.name  = "healing potion";
+} else {
 	_entity.name = choose("steve", "bob", "dave");	
 }
 
@@ -61,17 +49,27 @@ _entity.startingGridX =_creationX;
 _entity.startingGridY = _creationY;
 _entity.endingGridX = _creationX;
 _entity.endingGridY = _creationY;
-_entity.isBlockingMovement = _blocksMovement;
-_entity.depthPosition = depthPosition.living
-_entity.fighter = _componentFighter;
-_entity.ai = _ai;
 _entity.sprite_index = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.sprite , _entityNumber );
 _entity.image_index  = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.subimage , _entityNumber );
 _entity.image_blend	 = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.colour , _entityNumber );
+_entity.isBlockingMovement = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.blocksMovement , _entityNumber );
+_entity.depthPosition = depthPosition.living
 
-//run intialisation scripts
-if _componentFighter <> -1 {
-	with _entity {
-		script_execute(_componentFighter);		
+if _entityNumber <> entityNumber.healingPotion {
+	
+	_entity.fighter = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.fighter , _entityNumber );
+	_entity.ai = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.ai, _entityNumber );
+	_entity.hp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , _entityNumber );
+	_entity.maxHp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , _entityNumber );
+	_entity.strength = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.strength, _entityNumber );
+	_entity.defense = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.defense , _entityNumber );
+
+	//run intialisation scripts
+	if _entity.fighter <> false {
+		with _entity {
+			script_execute(_entity.fighter);		
+		}
 	}
+
 }
+

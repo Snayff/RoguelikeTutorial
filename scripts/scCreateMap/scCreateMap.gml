@@ -14,15 +14,17 @@ mp_grid_add_rectangle(oControllerEntity.movementGrid, 0,0, global.mapWidthInPixe
 scDebugMsg("Tiles created as walls.");
 
 //room requirements
-// 0 = tileX / 1 = width / 2 = tileY / 3 = height / 4 = max monsters
+// 0 = tileX / 1 = width / 2 = tileY / 3 = height / 4 = max monsters / 5 = max items
 
 //room1
+_room1[5] = 2; 
 _room1[4] = 3; 
 _room1[3] = 6; 
 _room1[2] = 8; 
 _room1[1] = 3; 
 _room1[0] = 4; 
 //room2
+_room2[5] = 4; 
 _room2[4] = 2; 
 _room2[3] = 7; 
 _room2[2] = 12; 
@@ -30,7 +32,7 @@ _room2[1] = 10;
 _room2[0] = 10; 
 
 //create the rooms
-scCreateRoom(_room1[0], _room1[1], _room1[2], _room1[3], _room1[4]);
-scCreateRoom(_room2[0], _room2[1], _room2[2], _room2[3], _room2[4]);
+scCreateRoom(_room1[0], _room1[1], _room1[2], _room1[3], _room1[4], _room1[5]);
+scCreateRoom(_room2[0], _room2[1], _room2[2], _room2[3], _room2[4], _room2[5]);
 
 scDebugMsg("All rooms carved out.");

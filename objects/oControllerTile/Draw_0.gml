@@ -35,7 +35,7 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 			}
 			
 			
-		} else if _viewValue & ISEXPLORED {
+		} else if _viewValue & ISEXPLORED { //have we seen
 			
 			//TILES
 			if _tileValue & ISBLOCKINGMOVEMENT {
@@ -47,7 +47,7 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 			//ENTITIES
 			if _entityValue <> 0 {
 				//set entity to visible
-				_entityValue.visible = true;
+				_entityValue.visible = false;
 			}
 			
 		} else { //can't see & haven't seen
@@ -57,7 +57,6 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 				//set entity to visible
 				_entityValue.visible = false;
 			}	
-			
 		}
 	}
 }

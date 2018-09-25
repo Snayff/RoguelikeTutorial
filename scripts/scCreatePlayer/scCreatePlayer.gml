@@ -5,4 +5,4 @@
 var _tileX = argument0;
 var _tileY = argument1;
 
-scCreateEntity(_tileX, _tileY, entityNumber.player, true, scFighter, -1 );
+scCreateEntity(_tileX, _tileY, entityNumber.player);

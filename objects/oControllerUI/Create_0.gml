@@ -4,8 +4,10 @@ scDebugMsg("CREATE CONTROLLER UI:");
 incrementY = 0;
 incrementX = 0;
 
-var _camHeight = oControllerCamera.cameraHeight;
-var _camWidth = oControllerCamera.cameraWidth;
+showTileSelect = false;
+
+var _screenHeight = oControllerCamera.idealHeight;
+var _screenWidth = oControllerCamera.idealWidth;
 
 logBackColour = c_black;
 logOutlineColour = c_white;
@@ -14,19 +16,19 @@ edgeSize = 5;
 logWidth = 180;
 logHeight = 140;
 logStartX = 0 + edgeSize; 
-logStartY = _camHeight - logHeight - edgeSize;
+logStartY = _screenHeight - logHeight - edgeSize;
 tileBoxWidth = 115;
 tileBoxHeight = 50;
-tileBoxStartX = _camWidth - tileBoxWidth - edgeSize;
-tileBoxStartY = _camHeight - tileBoxHeight -  edgeSize;
+tileBoxStartX = _screenWidth - tileBoxWidth - edgeSize;
+tileBoxStartY = _screenHeight - tileBoxHeight -  edgeSize;
 infoBoxWidth = tileBoxWidth;
 infoBoxHeight = 90;
-infoBoxStartX = _camWidth - tileBoxWidth - edgeSize;
-infoBoxStartY = _camHeight - infoBoxHeight - tileBoxHeight - edgeSize;
+infoBoxStartX = _screenWidth - tileBoxWidth - edgeSize;
+infoBoxStartY = _screenHeight - infoBoxHeight - tileBoxHeight - edgeSize;
 resourceBarWidth = 120;
 resourceBarHeight = 20;
 resourceBarStartX = logWidth + (edgeSize * 2);
-resourceBarStartY = _camHeight - resourceBarHeight -  edgeSize;
+resourceBarStartY = _screenHeight - resourceBarHeight -  edgeSize;
 resourceBackColour = c_black;
 
 //instance_create_depth(logStartX + 2, logStartY,0,oExample);

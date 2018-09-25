@@ -2,61 +2,48 @@
 
 var _entity = -1;
 
-//handle enemy turn
-//if global.currentGameState == gameState.enemyTurn {
 
+//allocate turn
 if oControllerEntity.moveToNextTurn {
+	
 	//loop all entities 
-	//for (var _i = 0; _i < ds_list_size(oControllerEntity.entityList); _i++) {
-		var _currentIndex = ds_list_find_index(oControllerEntity.entityList, oControllerEntity.turnHolder);
-		if _currentIndex == ds_list_size(oControllerEntity.entityList) - 1 {
-			var _index = 0;
-		}else {
-			var _index = _currentIndex + 1;
+	var _currentIndex = ds_list_find_index(oControllerEntity.entityList, oControllerEntity.turnHolder);
+	if _currentIndex == ds_list_size(oControllerEntity.entityList) - 1 {
+		var _index = 0;
+	}else {
+		var _index = _currentIndex + 1;
+	}
+	
+	//assign turn to entity
+	_entity = ds_list_find_value(oControllerEntity.entityList, _index);
+	oControllerEntity.turnHolder = _entity;
+	
+	//check if entity has ai and hp
+	var _hasAi = variable_instance_exists(_entity, "ai");
+	var _hasHp = variable_instance_exists(_entity, "hp");
+	
+	//has the hp variable so check if actually has hp
+	if _hasHp {
+		if _entity.hp > 0 {
+			_hasHp = true;	
+		} else {
+			_hasHp = false;	
 		}
-		
-		_entity = ds_list_find_value(oControllerEntity.entityList, _index);
-		
-		//check if entity has ai
-		if _entity.ai <> -1  {	
-			oControllerEntity.moveToNextTurn = false;
+	}
+	
+	//if entity has ai and hp take turn
+	if  _hasAi && _hasHp {	
+		oControllerEntity.moveToNextTurn = false;
 			
-			//assign turn to entity
-			oControllerEntity.turnHolder = _entity;
-			with _entity {
-				
-				script_execute(ai); //run ai 
-				//if startingGridX <> endingGridX || startingGridY <> endingGridY {
-				//	startingGridX = endingGridX;
-				//	startingGridY = endingGridY;
-				//}
-			}
-
-		} else if _entity.name = "player"  {
-			oControllerEntity.turnHolder = _entity;
-			oControllerEntity.moveToNextTurn = false;
-			//with _entity {
-			//	if startingGridX <> endingGridX || startingGridY <> endingGridY {
-			//			oControllerEntity.fovRecompute = true;
-			//			startingGridX = endingGridX;
-			//			startingGridY = endingGridY;
-			//	}
-			//}
+		with _entity {	
+			script_execute(ai); //run ai 
 		}
-		
-		//scProcessEvents();
-		
-		//if player has died stop AI taking actions
-		//if global.currentGameState == gameState.playerDead {
-			//break;	
-		//}
-		
-	//}
+
+	} else if _entity.name = "player"  {
+		oControllerEntity.moveToNextTurn = false;
+
+	}
 }		
-	//update gameState
-	//global.currentGameState = gameState.playerTurn;
-	//oControllerEntity.turnHolder = oControllerEntity.player;
-//}
 
 //recalculate FOV
 if fovRecompute == true {
@@ -69,13 +56,17 @@ for (var _i = 0; _i < ds_list_size(oControllerEntity.entityList); _i++) {
 	
 	_entity = ds_list_find_value(oControllerEntity.entityList, _i);
 	with _entity {
+		//moved position this turn
 		if startingGridX <> endingGridX || startingGridY <> endingGridY {
-				if _entity.name == "player" {
+				if name == "player" {
 					oControllerEntity.fovRecompute = true;
 				}
+				
+				movedThisTurn = true;
 				startingGridX = endingGridX;
 				startingGridY = endingGridY;
+		} else {//didnt move
+			movedThisTurn = false;
 		}
 	}
-	
 }

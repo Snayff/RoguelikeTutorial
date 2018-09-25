@@ -46,11 +46,12 @@ enum tileInfo {
 	enumSize
 }
 
-//entity names
+//entity numbers
 enum entityNumber {
 	player,
 	orc,
 	troll,
+	healingPotion,
 	enumSize
 	
 }
@@ -65,7 +66,10 @@ enum actorStat {
 	defense, 
 	strength,
 	deathSubImage,
-	hp,
+	blocksMovement,
+	fighter,
+	ai, // last item used in creation
+	hp, //must come after creation list
 	enumSize
 }
 

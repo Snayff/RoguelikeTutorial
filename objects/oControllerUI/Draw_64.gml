@@ -7,68 +7,84 @@ draw_set_halign(fa_left);
 var _fontHeight = string_height("0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM");
 
 #region Tile Info
-var _selectTileX = oControllerTile.tileSelectedX;
-var _selectTileY = oControllerTile.tileSelectedY;
 
-var _tileValue = 0;
-var _viewValue = 0; 
-var _entityValue = 0;
-var _entityName = "";
-var _entityMaxHp = "";
-var _entityHp = "";
-var _entityStrengthString = "";
-var _entityDefenseString = "";
+if showTileSelect {
+	var _selectTileX = oControllerTile.tileSelectedX;
+	var _selectTileY = oControllerTile.tileSelectedY;
 
-if _selectTileX > 0 && _selectTileX < global.mapWidthInTiles && _selectTileY > 0 && _selectTileY < global.mapHeightInTiles {
-	_tileValue = ds_grid_get(oControllerTile.tileGrid, _selectTileX, _selectTileY);
-	_viewValue = ds_grid_get(oControllerEntity.viewGrid, _selectTileX, _selectTileY);
-	_entityValue = ds_grid_get(oControllerEntity.entityGrid, _selectTileX, _selectTileY);
-}
+	var _tileValue = 0;
+	var _viewValue = 0; 
+	var _entityValue = 0;
+	var _entityName = "";
+	var _entityMaxHp = "";
+	var _entityHp = "";
+	var _entityStrengthString = "";
+	var _entityDefenseString = "";
 
-//what do we need to draw?
-var _blocksSight = false;
-var _blocksMovement = false;
-
-//can we see the tile
-if _viewValue & ISEXPLORED {
-	if _tileValue & ISBLOCKINGMOVEMENT {
-		_blocksSight = true;	
+	if _selectTileX > 0 && _selectTileX < global.mapWidthInTiles && _selectTileY > 0 && _selectTileY < global.mapHeightInTiles {
+		_tileValue = ds_grid_get(oControllerTile.tileGrid, _selectTileX, _selectTileY);
+		_viewValue = ds_grid_get(oControllerEntity.viewGrid, _selectTileX, _selectTileY);
+		_entityValue = ds_grid_get(oControllerEntity.entityGrid, _selectTileX, _selectTileY);
 	}
-	if _tileValue & ISBLOCKINGSIGHT {
-		_blocksMovement = true;	
-	}
-	if _entityValue <> 0 {
+
+	//what do we need to draw?
+	var _blocksSight = false;
+	var _blocksMovement = false;
+
+	//can we see the tile
+	if _viewValue & ISEXPLORED {
+	
+		if _tileValue & ISBLOCKINGMOVEMENT {
+			_blocksSight = true;	
+		}
+	
+		if _tileValue & ISBLOCKINGSIGHT {
+			_blocksMovement = true;	
+		}
+	
+		//get entity info
+		if _entityValue <> 0 {
+			if variable_instance_exists(_entityValue, "name") {
+				_entityName = scConvertToString(_entityValue.name);
+			}
+			if variable_instance_exists(_entityValue, "maxHp") {
+				_entityMaxHp = scConvertToString(_entityValue.maxHp);
+			}
+			if variable_instance_exists(_entityValue, "hp") {
+				_entityHp = scConvertToString(_entityValue.hp);
+			}
+			if variable_instance_exists(_entityValue, "strength") {
+				_entityStrengthString = scConvertToString("Str: ", _entityValue.strength);
+			}
+			if variable_instance_exists(_entityValue, "defense") {
+				_entityDefenseString = scConvertToString("Def: ", _entityValue.defense);
+			}
 		
-		_entityName = scConvertToString(_entityValue.name);
-		_entityMaxHp = scConvertToString(_entityValue.maxHp);
-		_entityHp = scConvertToString(_entityValue.hp);
-		_entityStrengthString = scConvertToString("Str: ", _entityValue.strength);
-		_entityDefenseString = scConvertToString("Def: ", _entityValue.defense);
+		}
+	}
+
+	//draw tileBox
+	scDrawWindow(tileBoxStartX, tileBoxStartY, tileBoxWidth, tileBoxHeight, logBackColour, logOutlineColour,  logAlpha);
+
+	var _tileHeader = scConvertToString("Tile Info");
+	var _tileSightString = scConvertToString("Blocks sight = ", _blocksSight);
+	var _tileMoveString = scConvertToString("Blocks movement = ", _blocksMovement);
+	draw_text(tileBoxStartX + edgeSize, tileBoxStartY + edgeSize, _tileHeader);
+	draw_text(tileBoxStartX + edgeSize, tileBoxStartY + edgeSize + _fontHeight + 2, _tileSightString);
+	draw_text(tileBoxStartX  + edgeSize, tileBoxStartY +  edgeSize + (_fontHeight *2) + 2, _tileMoveString);
+
+	//draw infoBox
+	scDrawWindow(infoBoxStartX, infoBoxStartY, infoBoxWidth, infoBoxHeight, logBackColour, logOutlineColour,  logAlpha);
+
+	var _entityHeader = scConvertToString("Actor info");
+	draw_text(infoBoxStartX + 2, infoBoxStartY + 2, _entityHeader);
+
+	if _entityValue <> 0 && _entityName <> "" {
+		draw_text(infoBoxStartX  + 2, infoBoxStartY + _fontHeight + 2, _entityName);
+		draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *2) + 2, "HP: " + _entityHp + "/" + _entityMaxHp);
+		draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *3) + 2, _entityStrengthString + "  " + _entityDefenseString );
 	}
 }
-
-//draw tileBox
-scDrawWindow(tileBoxStartX, tileBoxStartY, tileBoxWidth, tileBoxHeight, logBackColour, logOutlineColour,  logAlpha);
-
-var _tileHeader = scConvertToString("Tile Info");
-var _tileSightString = scConvertToString("Blocks sight = ", _blocksSight);
-var _tileMoveString = scConvertToString("Blocks movement = ", _blocksMovement);
-draw_text(tileBoxStartX + edgeSize, tileBoxStartY + edgeSize, _tileHeader);
-draw_text(tileBoxStartX + edgeSize, tileBoxStartY + edgeSize + _fontHeight + 2, _tileSightString);
-draw_text(tileBoxStartX  + edgeSize, tileBoxStartY +  edgeSize + (_fontHeight *2) + 2, _tileMoveString);
-
-//draw infoBox
-scDrawWindow(infoBoxStartX, infoBoxStartY, infoBoxWidth, infoBoxHeight, logBackColour, logOutlineColour,  logAlpha);
-
-var _entityHeader = scConvertToString("Actor info");
-draw_text(infoBoxStartX + 2, infoBoxStartY + 2, _entityHeader);
-
-if _entityValue <> 0 && _entityName <> "" {
-	draw_text(infoBoxStartX  + 2, infoBoxStartY + _fontHeight + 2, _entityName);
-	draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *2) + 2, "HP: " + _entityHp + "/" + _entityMaxHp);
-	draw_text(infoBoxStartX +  2, infoBoxStartY + (_fontHeight *3) + 2, _entityStrengthString + "  " + _entityDefenseString );
-}
-
 #endregion
 
 

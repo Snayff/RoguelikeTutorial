@@ -4,6 +4,7 @@
 ///@param startingTileY First Tile y
 ///@param heightOfRoom The room's height
 ///@param maxMonsters max number of monsters for the room
+///@param maxItems max number of items for the room
 
 
 var _startingTileX = argument0;
@@ -11,6 +12,7 @@ var _widthOfRoom = argument1;
 var _startingTileY = argument2;
 var _heightOfRoom = argument3;
 var _maxMonsters = argument4;
+var _maxItems = argument5;
 var _intersectFound = false;
 
 scDebugMsg("CREATE ROOM:");
@@ -91,6 +93,7 @@ if _widthOfRoom > 1 || _heightOfRoom > 1 {
 			
 			//add entities to room
 			scAddEntitiesToRoom(_maxMonsters, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom,  entityNumber.orc, entityNumber.troll);
+			scAddEntitiesToRoom(_maxItems, _startingTileX, _startingTileY, _startingTileX + _widthOfRoom, _startingTileY + _heightOfRoom,  entityNumber.healingPotion);
 		}
 		
 		//add to roomInfoGrid

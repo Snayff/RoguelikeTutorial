@@ -30,6 +30,10 @@ switch _resource {
 }
 
 //draw bar
-draw_healthbar(_startX, _startY, _startX + _width, _startY + _height, _resourceRatio, _backColour, _fillColourMin, _fillColourMax, 1, true, true );
+draw_healthbar(_startX, _startY, _startX + _width, _startY + _height, _resourceRatio, _backColour, _fillColourMin, _fillColourMax, 0, true, true );
 //show amount
 draw_text_colour(_startX + (_width / 2), _startY + (_height / 2), string(_amount), c_white, c_white, c_white, c_white, 1);
+//draw outline
+draw_set_alpha(0.5);
+draw_rectangle_colour(_startX, _startY, _startX + _width, _startY + _height,c_white,c_white,c_white,c_white,true);
+draw_set_alpha(1);

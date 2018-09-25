@@ -44,6 +44,7 @@ if oControllerEntity.turnHolder = oControllerEntity.player && global.currentGame
 
 //select tile
 if inpSelect {
+	oControllerUI.showTileSelect = true;
 	oControllerTile.tileSelectedX = scConvertToTile(mouse_x);
 	oControllerTile.tileSelectedY = scConvertToTile(mouse_y);
 	
