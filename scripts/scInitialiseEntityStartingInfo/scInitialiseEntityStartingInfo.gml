@@ -1,7 +1,7 @@
 ///@desc initialise actorStatGrid 
 
 
-var _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai;
+var _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai, _inventory;
 
 actorStatGrid = ds_grid_create(actorStat.enumSize,entityNumber.enumSize );
 
@@ -20,7 +20,8 @@ _deathImage = 37;
 _blocksMovement = true;
 _fighter = false;
 _ai = false;
-scSetFieldsInGridRow(_grid, entityNumber.player, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai);
+_inventory  = true;
+scSetFieldsInGridRow(_grid, entityNumber.player, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai, _inventory);
 
 //orc
 _name = entityNumber.orc;
@@ -33,8 +34,9 @@ _strength = 2;
 _deathImage = 37;
 _blocksMovement = true;
 _fighter = true;
-_ai = scBasicMonster;
-scSetFieldsInGridRow(_grid, entityNumber.orc, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai);
+_ai = scAiBasicMonster;
+_inventory  = false;
+scSetFieldsInGridRow(_grid, entityNumber.orc, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai, _inventory);
 
 //troll
 _name = entityNumber.troll;
@@ -47,8 +49,9 @@ _strength = 1;
 _deathImage = 37;
 _blocksMovement = true;
 _fighter = true;
-_ai = scBasicMonster;
-scSetFieldsInGridRow(_grid, entityNumber.troll, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai);
+_ai = scAiBasicMonster;
+_inventory  = false;
+scSetFieldsInGridRow(_grid, entityNumber.troll, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai, _inventory);
 
 //healingPotion
 _name = entityNumber.healingPotion;
@@ -62,5 +65,6 @@ _deathImage = -1;
 _blocksMovement = false;
 _fighter = false;
 _ai = false;
-scSetFieldsInGridRow(_grid, entityNumber.healingPotion, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai);
+_inventory  = false;
+scSetFieldsInGridRow(_grid, entityNumber.healingPotion, 0, _name, _sprite, _subimage, _colour, _maxHp, _defense, _strength, _deathImage, _blocksMovement, _fighter, _ai, _inventory);
 

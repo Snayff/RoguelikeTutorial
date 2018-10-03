@@ -70,6 +70,10 @@ if _entityNumber <> entityNumber.healingPotion {
 			script_execute(_entity.fighter);		
 		}
 	}
-
+	if _entity.inventory <> false {
+		with _entity {
+			script_execute(_entity.fighter);		
+		}
+	}
 }
 

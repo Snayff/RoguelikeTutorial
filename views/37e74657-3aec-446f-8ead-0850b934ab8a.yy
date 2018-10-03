@@ -9,7 +9,7 @@
         "142fbf49-c9c3-4e17-b6d8-d23904e6de8d"
     ],
     "filterType": "GMScript",
-    "folderName": "World Calculations",
+    "folderName": "WorldCalculations",
     "isDefaultView": false,
     "localisedFolderName": ""
 }

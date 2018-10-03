@@ -10,6 +10,7 @@ while !ds_map_empty(oControllerEvent.eventQueue) {
 	var _attack = oControllerEvent.eventQueue[? "attack"]; //defending entity
 	var _dead = oControllerEvent.eventQueue[? "dead"]; //dead entity
 	var _message = oControllerEvent.eventQueue[? "message"]; //string to show in log
+	var _pickup = oControllerEvent.eventQueue[? "pickup"]; //entity picking up item
 
 
 	#region move
@@ -70,5 +71,19 @@ while !ds_map_empty(oControllerEvent.eventQueue) {
 	}
 
 	#endregion
+
+
+#region pickup
+
+if !is_undefined(_pickup) {
+	
+	
+	
+	ds_map_delete(oControllerEvent.eventQueue, "pickup");
+	scDebugMsg("Pickup event processed");
+
+}
+
+#endregion
 
 }

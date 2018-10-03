@@ -1,8 +1,8 @@
 {
-    "id": "448d4779-07fc-417f-a0dd-b4885786e003",
+    "id": "9c257633-3884-4c19-bff9-905f8a25d12e",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scBasicMonster",
+    "name": "scPickupItem",
     "IsCompatibility": false,
     "IsDnD": false
 }

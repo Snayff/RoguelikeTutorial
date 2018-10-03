@@ -68,7 +68,8 @@ enum actorStat {
 	deathSubImage,
 	blocksMovement,
 	fighter,
-	ai, // last item used in creation
+	ai, 
+	inventory, // last item used in creation
 	hp, //must come after creation list
 	enumSize
 }

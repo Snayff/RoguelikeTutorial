@@ -34,7 +34,7 @@ resourceBackColour = c_black;
 //instance_create_depth(logStartX + 2, logStartY,0,oExample);
 
 
-maxLogLines = 10;
+maxLogLines = 9;
 stringArrayCounter = 0;
 stringArray[0] = "Welcome to Roguelike Tutorial";
 //stringArray[0] = "Welcome to [c_orange]Roguelike Tutorial[]";

@@ -34,6 +34,7 @@ inpCancel = keyboard_check_pressed(vk_escape);
 inpFullScreen = keyboard_check_pressed(ord("F"));
 
 inpSelect = mouse_check_button_pressed(mb_left)
+inpPickup = keyboard_check_pressed(ord("G"));
 
 /*
 //GAMEPAD

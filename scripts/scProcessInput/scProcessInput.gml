@@ -20,7 +20,6 @@ if inpFullScreen == true {
 }
 
 
-//if global.currentGameState == gameState.playerTurn {
 if oControllerEntity.turnHolder = oControllerEntity.player && global.currentGameState <> gameState.playerDead{
 	// attempt movement
 	if inpRight == true {
@@ -47,5 +46,10 @@ if inpSelect {
 	oControllerUI.showTileSelect = true;
 	oControllerTile.tileSelectedX = scConvertToTile(mouse_x);
 	oControllerTile.tileSelectedY = scConvertToTile(mouse_y);
+}
+
+//pickup item
+if inpPickup {
+	oControllerEvent.eventQueue[? "pickup"] = _player;
 	
 }

@@ -12,3 +12,4 @@ path = -1;
 //component flags
 fighter = -1;
 ai = -1;
+inventory = -1;
