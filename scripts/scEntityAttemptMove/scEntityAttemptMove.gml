@@ -28,18 +28,27 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			
 			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") moved to [", _targetX, ",", _targetY, "]");
 		} else { // another entity is in target location
-			_otherEntity = ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY)
+			var _entityListAtPosition = ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY)
 			
-			//is it an entity blocking movement
-			if _otherEntity.isBlockingMovement {
+			//check all entities in that tile
+			for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+				_otherEntity = ds_list_find_value(_entityListAtPosition, _i);
+				var _hasBlockMovement = variable_instance_exists(_otherEntity, "isBlockingMovement");
 				
-				oControllerEvent.eventQueue[? "attack"] = _otherEntity;
-				
-			} else {
-				var _move;
-				_move[0] = _targetX;
-				_move[1] = _targetY;
-				oControllerEvent.eventQueue[? "move"] = _move; 
+				//if they entity has the right variable to check
+				if _hasBlockMovement {
+					//check if it is blocking us
+					if _otherEntity.isBlockingMovement {
+						oControllerEvent.eventQueue[? "attack"] = _otherEntity;
+						break; //leave the for loop
+					} else {
+						var _move;
+						_move[0] = _targetX;
+						_move[1] = _targetY;
+						oControllerEvent.eventQueue[? "move"] = _move; 
+						break; //leave the for loop
+					}
+				}
 			}
 		}
 	} else {

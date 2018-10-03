@@ -1,5 +1,4 @@
-/// @desc DEBUG movement
-
+///@desc DEBUG movement
 //draw movement grid
 /*
 draw_set_alpha(0.2);

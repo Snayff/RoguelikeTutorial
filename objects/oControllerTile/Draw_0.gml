@@ -4,7 +4,7 @@ var _xPos = -1;
 var _yPos = -1;
 var _tileValue = -1;
 var _viewValue = -1;
-var _entityValue = -1;
+
 
 //loop backwards through tileGrid and draw all tiles as required
 for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tileY--; ){
@@ -14,7 +14,7 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 		_yPos = scConvertToXY(_tileY);
 		_tileValue = ds_grid_get(oControllerTile.tileGrid, _tileX, _tileY);
 		_viewValue = ds_grid_get(oControllerEntity.viewGrid, _tileX, _tileY);
-		_entityValue = ds_grid_get(oControllerEntity.entityGrid, _tileX, _tileY);
+
 
 		//can we see the tile
 		if _viewValue & ISVISIBLE {
@@ -28,11 +28,6 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 				scDrawTile(ground[tileInfo.sprite], ground[tileInfo.subImage], _xPos, _yPos, COLOUR_LIGHTGROUND);
 			}
 			
-			//ENTITIES
-			if _entityValue <> 0 {
-				//set entity to visible
-				_entityValue.visible = true;
-			}
 			
 			
 		} else if _viewValue & ISEXPLORED { //have we seen
@@ -44,19 +39,9 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 				scDrawTile(ground[tileInfo.sprite], ground[tileInfo.subImage], _xPos, _yPos, COLOUR_DARKGROUND);
 			}
 			
-			//ENTITIES
-			if _entityValue <> 0 {
-				//set entity to visible
-				_entityValue.visible = false;
-			}
 			
 		} else { //can't see & haven't seen
-			
-			//ENTITIES
-			if _entityValue <> 0 {
-				//set entity to visible
-				_entityValue.visible = false;
-			}	
+				
 		}
 	}
 }

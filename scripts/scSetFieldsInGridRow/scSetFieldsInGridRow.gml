@@ -13,5 +13,5 @@ var _argValue;
 //loop through values and add to grid whilst in grid range
 for (var _i = 3; _i < argument_count ; _i++){
 	ds_grid_add(_grid, _startingGridX + (_i -3) , _gridY, argument[_i]); //3 is the number of arguments before the value
-	scDebugMsg("Write to grid position ", _i - 3, ": ", argument[_i]);
+	//scDebugMsg("Write to grid position ", _i - 3, ": ", argument[_i]);
 }

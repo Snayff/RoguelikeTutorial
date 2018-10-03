@@ -12,12 +12,13 @@ var _targetY = argument2;
 //scDebugMsg("startingArrayValueBeforeMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 		
 //remove entity from current position in entityGrid
-ds_grid_set(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY, 0);
+scRemoveEntityFromTile(_entity, _entity.startingGridX, _entity.startingGridY);
 		
 //scDebugMsg("startingArrayValueAfterMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 			
 //add entity to new position in array
-ds_grid_set(oControllerEntity.entityGrid, _targetX, _targetY, _entity);
+scAddEntityToTile(_entity, _targetX, _targetY);
+
 		
 //move entity
 _entity.x = scConvertToXY(_targetX);
