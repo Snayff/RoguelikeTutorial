@@ -1,8 +1,8 @@
 {
-    "id": "9c257633-3884-4c19-bff9-905f8a25d12e",
+    "id": "8c8a5426-d812-4732-a852-356b24c84769",
     "modelName": "GMScript",
     "mvc": "1.0",
-    "name": "scPickupItem",
+    "name": "scDeleteEntity",
     "IsCompatibility": false,
     "IsDnD": false
 }

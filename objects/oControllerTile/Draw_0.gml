@@ -16,10 +16,8 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 		_viewValue = ds_grid_get(oControllerEntity.viewGrid, _tileX, _tileY);
 
 
-		//can we see the tile
+		//can see the tile
 		if _viewValue & ISVISIBLE {
-			
-			//TILES
 			
 			//check if tile ISBLOCKINGMOVEMENT, i.e. a wall. otherwise it is a floor
 			if _tileValue & ISBLOCKINGMOVEMENT {
@@ -30,15 +28,13 @@ for (var _tileY = ds_grid_height(oControllerTile.tileGrid)-1; _tileY >= 0; _tile
 			
 			
 			
-		} else if _viewValue & ISEXPLORED { //have we seen
+		} else if _viewValue & ISEXPLORED { //have seen
 			
-			//TILES
 			if _tileValue & ISBLOCKINGMOVEMENT {
 				scDrawTile(wall[tileInfo.sprite], wall[tileInfo.subImage], _xPos, _yPos, COLOUR_DARKWALL);
 			} else {
 				scDrawTile(ground[tileInfo.sprite], ground[tileInfo.subImage], _xPos, _yPos, COLOUR_DARKGROUND);
 			}
-			
 			
 		} else { //can't see & haven't seen
 				

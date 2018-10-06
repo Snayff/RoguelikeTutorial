@@ -12,7 +12,7 @@ var _targetY = argument2;
 //scDebugMsg("startingArrayValueBeforeMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 		
 //remove entity from current position in entityGrid
-scRemoveEntityFromTile(_entity, _entity.startingGridX, _entity.startingGridY);
+scRemoveEntityFromTile(_entity);
 		
 //scDebugMsg("startingArrayValueAfterMove: ", ds_grid_get(oControllerEntity.entityGrid, _entity.startingGridX, _entity.startingGridY));
 			

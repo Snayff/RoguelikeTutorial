@@ -27,32 +27,44 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			oControllerEvent.eventQueue[? "move"] = _move; 
 			
 			scDebugMsg("An entity (", ds_grid_get(oControllerEntity.entityGrid, _targetX, _targetY), ") moved to [", _targetX, ",", _targetY, "]");
+			
 		} else { // another entity is in target location
 			var _entityListAtPosition = ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY)
 			
 			//check all entities in that tile
 			for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
 				_otherEntity = ds_list_find_value(_entityListAtPosition, _i);
-				var _hasBlockMovement = variable_instance_exists(_otherEntity, "isBlockingMovement");
 				
-				//if they entity has the right variable to check
-				if _hasBlockMovement {
-					//check if it is blocking us
-					if _otherEntity.isBlockingMovement {
-						oControllerEvent.eventQueue[? "attack"] = _otherEntity;
-						break; //leave the for loop
-					} else {
-						var _move;
-						_move[0] = _targetX;
-						_move[1] = _targetY;
-						oControllerEvent.eventQueue[? "move"] = _move; 
-						break; //leave the for loop
+				//check entity exists
+				if !is_undefined(_otherEntity) {
+					var _hasBlockMovement = variable_instance_exists(_otherEntity, "isBlockingMovement");
+					var _blockingEntityFound = false;
+				
+					//if they entity has the right variable to check
+					if _hasBlockMovement {
+						//check if it is blocking us
+						if _otherEntity.isBlockingMovement {
+							oControllerEvent.eventQueue[? "attack"] = _otherEntity;
+							_blockingEntityFound = true;
+							break; //only one thing can block a space so if we found it leave the loop
+						} 
 					}
 				}
 			}
+			
+			//didnt find anything blocking the space so move to it
+			if _blockingEntityFound == false {
+				var _move;
+				_move[0] = _targetX;
+				_move[1] = _targetY;
+				oControllerEvent.eventQueue[? "move"] = _move; 
+			}
+			
 		}
 	} else {
 		scDebugMsg("A tile is blocking the target location [",_targetX, ",", _targetY, "]." );
+		//when ai tries to walk into tile it just keeps trying if we dont increment
+		//***update to force AI to try another direction
 		if _entity.name <> "player" {
 			scIncrementTurn();
 		}

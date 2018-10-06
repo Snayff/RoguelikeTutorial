@@ -9,7 +9,8 @@
         "d24d00e2-074f-4fb0-b7a2-85c0761c7478",
         "a28b53ac-300b-4ccb-bc0d-1ba0b0b8db6e",
         "377e474e-3b3e-41d3-9502-0c9641c7c3e9",
-        "6ffc6cf9-b6a0-43c6-99eb-ae4dae92aedc"
+        "6ffc6cf9-b6a0-43c6-99eb-ae4dae92aedc",
+        "8c8a5426-d812-4732-a852-356b24c84769"
     ],
     "filterType": "GMScript",
     "folderName": "Life",

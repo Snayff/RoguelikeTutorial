@@ -1,5 +1,5 @@
 ///@desc add inventory component
 
-inventoryCapacity = 2;
+inventoryCapacity = 1;
 
-inventory = [];
+inventory = ds_list_create();

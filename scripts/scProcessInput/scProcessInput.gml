@@ -50,6 +50,6 @@ if inpSelect {
 
 //pickup item
 if inpPickup {
-	oControllerEvent.eventQueue[? "pickup"] = _player;
+	scAttemptPickupItem(_player);
 	
 }

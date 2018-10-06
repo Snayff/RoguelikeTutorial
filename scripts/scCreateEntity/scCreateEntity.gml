@@ -68,12 +68,14 @@ if _entityNumber <> entityNumber.healingPotion {
 	//run intialisation scripts
 	if _entity.fighter <> false {
 		with _entity {
-			script_execute(_entity.fighter);		
+			//script_execute(_entity.fighter);		
+			//scComponentFighter(); //***need to amend componenent structure to handle intialisation scripts
 		}
 	}
 	if _entity.inventory <> false {
 		with _entity {
-			script_execute(_entity.fighter);		
+			//script_execute(_entity.inventory);		
+			scComponentInventory();
 		}
 	}
 }

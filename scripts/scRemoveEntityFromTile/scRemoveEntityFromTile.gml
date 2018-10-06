@@ -1,11 +1,9 @@
-///@desc remove entity from a tile
+///@desc remove entity from current tile
 ///@param entity entity to remove
-///@param targetX tile X to remove from
-///@param targetY tile Y to remove from
 
 var _entity = argument0;
-var _targetX = argument1;
-var _targetY = argument2;
+var _targetX = _entity.startingGridX;
+var _targetY =  _entity.startingGridY;
 
 //remove entity from current position in entityGrid
 var _listIndexInPosition = oControllerEntity.entityGrid[# _targetX, _targetY];
