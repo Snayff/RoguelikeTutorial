@@ -1,4 +1,4 @@
-/// @desc handle entity
+/// @desc handle entities
 
 
 scDebugMsg("CREATE CONTROLLER ENTITY:");

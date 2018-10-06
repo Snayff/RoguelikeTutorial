@@ -8,7 +8,7 @@ var _entityListAtPosition = oControllerEntity.entityGrid[# _tileX, _tileY];
 var _otherEntity = -1;
 
 //get all entities on current tile
-for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+for ( var _i = 0; _i < ds_list_size(_entityListAtPosition); _i++)  {
 	_otherEntity = ds_list_find_value(_entityListAtPosition, _i);
 				
 	//check entity exists

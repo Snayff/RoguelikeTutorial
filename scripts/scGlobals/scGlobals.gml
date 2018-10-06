@@ -9,7 +9,7 @@ global.mapHeightInPixels = room_height;
 
 //turn management
 global.currentGameState = gameState.playerTurn;
-
+global.previousGameState = gameState.playerTurn;
 
 //tile info
 #macro TILESIZE 32
@@ -77,8 +77,9 @@ enum actorStat {
 //game state
 enum gameState{
 	playerTurn,
-	enemyTurn,
+	otherTurn,
 	playerDead,
+	showMenu,
 	enumSize
 	
 }
@@ -95,4 +96,11 @@ enum depthPosition {
 enum resourceType {
 	hp,
 	enumSize
+}
+
+//list of menus
+enum menuNumber {
+	inventory,
+	enumSize
+	
 }

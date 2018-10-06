@@ -1,10 +1,10 @@
-
-//update game state
+///@desc move turn to next entity
 
 scDebugMsg(oControllerEntity.turnHolder,  " ends their turn");
-//if global.currentGameState == gameState.playerTurn {
-//		scDebugMsg("increment turn");
-//		global.currentGameState = gameState.enemyTurn;
-//}
+
+//if currently player then move to other turn
+if oControllerEntity.turnHolder == oControllerEntity.player {
+		scUpdateGameState(gameState.otherTurn);
+}
 
 oControllerEntity.moveToNextTurn = true;

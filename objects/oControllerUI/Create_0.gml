@@ -1,46 +1,51 @@
 /// @desc
 scDebugMsg("CREATE CONTROLLER UI:");
 
-incrementY = 0;
-incrementX = 0;
-
 showTileSelect = false;
 
 var _screenHeight = oControllerCamera.idealHeight;
 var _screenWidth = oControllerCamera.idealWidth;
+draw_set_font(fTestA);
+fontHeight = string_height("0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM");
+edgeSize = 5;
 
+//Message Log
+maxLogLines = 10;
 logBackColour = c_black;
 logOutlineColour = c_white;
-logAlpha = 0.5;
-edgeSize = 5;
+logAlpha = 1; // 0.5;
 logWidth = 180;
-logHeight = 140;
+logHeight = (maxLogLines * fontHeight) + fontHeight + edgeSize ;
 logStartX = 0 + edgeSize; 
 logStartY = _screenHeight - logHeight - edgeSize;
-tileBoxWidth = 115;
-tileBoxHeight = 50;
-tileBoxStartX = _screenWidth - tileBoxWidth - edgeSize;
-tileBoxStartY = _screenHeight - tileBoxHeight -  edgeSize;
-infoBoxWidth = tileBoxWidth;
-infoBoxHeight = 90;
-infoBoxStartX = _screenWidth - tileBoxWidth - edgeSize;
-infoBoxStartY = _screenHeight - infoBoxHeight - tileBoxHeight - edgeSize;
+
+
+//InfoBox - show entity info
+infoBoxWidth = logWidth;
+infoBoxHeight = logHeight * 0.6; 
+infoBoxStartX = logStartX; 
+infoBoxStartY = logStartY;
+
+//TileBox - show tile info
+tileBoxWidth = logWidth ;
+tileBoxHeight = logHeight * 0.4; 
+tileBoxStartX = logStartX;
+tileBoxStartY = logStartY + infoBoxHeight;
+
+//ResourceBar
 resourceBarWidth = 120;
 resourceBarHeight = 20;
 resourceBarStartX = logWidth + (edgeSize * 2);
 resourceBarStartY = _screenHeight - resourceBarHeight -  edgeSize;
 resourceBackColour = c_black;
 
-//instance_create_depth(logStartX + 2, logStartY,0,oExample);
 
-
-maxLogLines = 9;
-stringArrayCounter = 0;
+//Manage Message Log
+stringArrayCounter = 0; //what is the starting point of the array to start showing in the log
 stringArray[0] = "Welcome to Roguelike Tutorial";
-//stringArray[0] = "Welcome to [c_orange]Roguelike Tutorial[]";
-newMessageAdded = false;
+newMessageAdded = true;
 messageString = ""; 
-runOverLines = 0;
+runOverLines = 0; //lines of text that exceed line width and wrap to next line
 
 
 //build first X lines from array from start position
@@ -50,6 +55,3 @@ for (var _i = 0; _i < min(array_length_1d(stringArray), maxLogLines - runOverLin
 	}
 	messageString = messageString + string(stringArray[_i ]) + "\n" ;
 }
-
-//scribble_destroy( oExample.json );
-//oExample.json = scribble_create( _string, 235, "spSpriteFont", fa_left, make_colour_hsv( 35, 140, 210 ) );

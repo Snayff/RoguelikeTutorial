@@ -16,12 +16,11 @@ for (var _arrayHeight = ds_grid_height(oControllerEntity.viewGrid)-1; _arrayHeig
 }
 
 //set current tile's vision
-scAddBitmaskValue(oControllerEntity.viewGrid, _startX, _startY, ISVISIBLE);
+scAddBitmaskValue(oControllerEntity.viewGrid, _startX, _startY, ISVISIBLE, ISEXPLORED);
 
 //rotate through octants and set vision
 for(var _octant = 0; _octant < 8; _octant++){
 	scCalculateVisionInOctant(_octant, _startX, _startY, _fovRange, 1, 1, 1, 0, 1);
-
 }
 
 

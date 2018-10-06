@@ -7,4 +7,4 @@ var _msg = "You have died.";
 
 scAddMessageToEventQueue(_msg);
 
-global.currentGameState = gameState.playerDead;
+scUpdateGameState(gameState.playerDead);

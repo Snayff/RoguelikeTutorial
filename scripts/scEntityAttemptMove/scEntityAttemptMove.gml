@@ -32,7 +32,7 @@ if _targetX > 0 || _targetX < ds_grid_width(oControllerTile.tileGrid)  || _targe
 			var _entityListAtPosition = ds_grid_get(oControllerEntity.entityGrid,_targetX, _targetY)
 			
 			//check all entities in that tile
-			for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+			for ( var _i = 0; _i < ds_list_size(_entityListAtPosition); _i++)  {
 				_otherEntity = ds_list_find_value(_entityListAtPosition, _i);
 				
 				//check entity exists

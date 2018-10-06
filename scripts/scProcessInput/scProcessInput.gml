@@ -20,7 +20,7 @@ if inpFullScreen == true {
 }
 
 
-if oControllerEntity.turnHolder = oControllerEntity.player && global.currentGameState <> gameState.playerDead{
+if oControllerEntity.turnHolder == oControllerEntity.player && global.currentGameState == gameState.playerTurn{
 	// attempt movement
 	if inpRight == true {
 		scEntityAttemptMove(_player, 1, 0);
@@ -49,7 +49,6 @@ if inpSelect {
 }
 
 //pickup item
-if inpPickup {
+if inpPickup && global.currentGameState == gameState.playerTurn {
 	scAttemptPickupItem(_player);
-	
 }

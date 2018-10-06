@@ -30,7 +30,6 @@ scDebugMsg("Entity ", _entityNumber, " created at [",_creationX , ",", _creation
 ds_list_add(oControllerEntity.entityList, _entity);
 
 //add to entityGrid
-//ds_grid_set(oControllerEntity.entityGrid, _creationX, _creationY, _entity);
 scAddEntityToTile(_entity, _creationX, _creationY);
 
 //assign player instance ID to player variable

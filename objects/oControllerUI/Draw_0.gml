@@ -1,4 +1,4 @@
-/// @desc mouse highlight
+/// @desc mouse highlight, mouse position
 
 
 var _selectTileX = scConvertToXY(oControllerTile.tileSelectedX);

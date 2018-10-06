@@ -35,12 +35,13 @@ if oControllerEntity.moveToNextTurn {
 	//if entity has ai and hp take turn
 	if  _hasAi && _hasHp {	
 		oControllerEntity.moveToNextTurn = false;
-			
+		
 		with _entity {	
 			script_execute(ai); //run ai 
 		}
 
 	} else if _entity.name = "player"  {
+		scUpdateGameState(gameState.playerTurn);
 		oControllerEntity.moveToNextTurn = false;
 
 	}
@@ -103,7 +104,7 @@ for (var _tileY = ds_grid_height(oControllerEntity.entityGrid)-1; _tileY >= 0; _
 			//ENTITIES
 			if _entityListAtPosition <> -1 {
 				if ds_exists(_entityListAtPosition, ds_type_list) {
-					for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+					for ( var _i = 0; _i < ds_list_size(_entityListAtPosition); _i++)  {
 						_entityValue = ds_list_find_value(_entityListAtPosition, _i);
 						_entityValue.visible = true;
 					}
@@ -116,7 +117,7 @@ for (var _tileY = ds_grid_height(oControllerEntity.entityGrid)-1; _tileY >= 0; _
 			//ENTITIES
 			if _entityListAtPosition <> -1 {
 				if ds_exists(_entityListAtPosition, ds_type_list) {
-					for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+					for ( var _i = 0; _i < ds_list_size(_entityListAtPosition); _i++)  {
 						_entityValue = ds_list_find_value(_entityListAtPosition, _i);
 						_entityValue.visible = false;
 					}
@@ -128,7 +129,7 @@ for (var _tileY = ds_grid_height(oControllerEntity.entityGrid)-1; _tileY >= 0; _
 			//ENTITIES
 			if _entityListAtPosition <> -1 {
 				if ds_exists(_entityListAtPosition, ds_type_list) {
-					for ( var _i = 0; _i <= ds_list_size(_entityListAtPosition); _i++)  {
+					for ( var _i = 0; _i < ds_list_size(_entityListAtPosition); _i++)  {
 						_entityValue = ds_list_find_value(_entityListAtPosition, _i);
 						_entityValue.visible = false;
 					}
@@ -137,4 +138,12 @@ for (var _tileY = ds_grid_height(oControllerEntity.entityGrid)-1; _tileY >= 0; _
 		}
 	}
 }
+#endregion
+
+#region tile select reset
+
+if oControllerEntity.player.movedThisTurn {
+	oControllerUI.showTileSelect = false;	
+}
+
 #endregion
