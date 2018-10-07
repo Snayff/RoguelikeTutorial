@@ -4,10 +4,9 @@
     "mvc": "1.1",
     "name": "e285487e-deec-4a82-ad83-147392177329",
     "children": [
-        "3bf562d0-631e-49b6-a64f-f6fc359b748c",
-        "bf6f3c0b-78b6-4a65-99db-7c1a83908747",
-        "ef3f8118-ea7a-4051-89ec-ea844be8a1ca",
-        "657cba76-b73e-44ad-a30f-f57a2b24bb5f"
+        "e5cbfd80-e96c-4da1-9b1e-74e9612be702",
+        "16628441-c6d2-46e1-a106-8348c1995e45",
+        "9ab2927a-6a48-42e0-a062-b9e2bf26058c"
     ],
     "filterType": "GMScript",
     "folderName": "EventManagement",

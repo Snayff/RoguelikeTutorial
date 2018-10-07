@@ -49,20 +49,20 @@ _entity.startingGridX =_creationX;
 _entity.startingGridY = _creationY;
 _entity.endingGridX = _creationX;
 _entity.endingGridY = _creationY;
-_entity.sprite_index = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.sprite , _entityNumber );
-_entity.image_index  = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.subimage , _entityNumber );
-_entity.image_blend	 = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.colour , _entityNumber );
-_entity.isBlockingMovement = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.blocksMovement , _entityNumber );
+_entity.sprite_index = scGetEntityStat(_entityNumber, actorStat.sprite); 
+_entity.image_index  = scGetEntityStat(_entityNumber, actorStat.subimage);
+_entity.image_blend	 = scGetEntityStat(_entityNumber, actorStat.colour );
+_entity.isBlockingMovement = scGetEntityStat(_entityNumber, actorStat.blocksMovement );
 _entity.depthPosition = depthPosition.living
 
 if _entityNumber <> entityNumber.healingPotion {
 	
-	_entity.fighter = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.fighter , _entityNumber );
-	_entity.ai = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.ai, _entityNumber );
-	_entity.hp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , _entityNumber );
-	_entity.maxHp = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.maxHp , _entityNumber );
-	_entity.strength = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.strength, _entityNumber );
-	_entity.defense = ds_grid_get(oControllerEntity.actorStatGrid, actorStat.defense , _entityNumber );
+	_entity.fighter = scGetEntityStat(_entityNumber, actorStat.fighter);
+	_entity.ai = scGetEntityStat(_entityNumber, actorStat.ai );
+	_entity.hp = scGetEntityStat(_entityNumber, actorStat.maxHp);
+	_entity.maxHp = scGetEntityStat(_entityNumber, actorStat.maxHp );
+	_entity.strength = scGetEntityStat(_entityNumber, actorStat.strength );
+	_entity.defense = scGetEntityStat(_entityNumber, actorStat.defense );
 
 	//run intialisation scripts
 	if _entity.fighter <> false {

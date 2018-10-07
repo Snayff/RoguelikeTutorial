@@ -20,6 +20,6 @@ instance_create_depth(0,0,3,oControllerTile);
 instance_create_depth(0,0,10,oControllerCamera);
 instance_create_depth(0,0,10,oControllerInput);
 instance_create_depth(0,0,2,oControllerUI);
-
+instance_create_depth(0,0,2,oControllerMenu);
 
 

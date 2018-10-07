@@ -2,25 +2,10 @@
 
 var _player = oControllerEntity.player;
 
-//game functions
-if inpCancel == true {
-	game_end()
-}
-if inpFullScreen == true {
-	switch window_get_fullscreen() {
-		case false:
-			window_set_fullscreen(1);
-			break;
-		case true:
-			window_set_fullscreen(0);
-			break;
-	}
-
-	oControllerCamera.alarm[0] = 1; // recenters display
-}
-
-
-if oControllerEntity.turnHolder == oControllerEntity.player && global.currentGameState == gameState.playerTurn{
+//handle controls based on game state
+if global.currentGameState == gameState.playerTurn{
+	#region player turn
+	
 	// attempt movement
 	if inpRight == true {
 		scEntityAttemptMove(_player, 1, 0);
@@ -39,16 +24,60 @@ if oControllerEntity.turnHolder == oControllerEntity.player && global.currentGam
 	} else if inpDownLeft == true {
 		scEntityAttemptMove(_player, -1, 1);	
 	}
+
+	//pickup item
+	if inpPickup {
+		scAttemptPickupItem(_player);
+	}
+
+	//show inventory
+	if inpShowInventory {
+		oControllerMenu.activeMenu = menuNumber.inventory; //update to show inventory menu
+		scUpdateGameState(gameState.showMenu);	//update game state
+		
+	}
+	
+	//select tile
+	if inpSelect {
+		oControllerUI.showTileSelect = true;
+		oControllerTile.tileSelectedX = scConvertToTile(mouse_x);
+		oControllerTile.tileSelectedY = scConvertToTile(mouse_y);
+	}
+	#endregion	
+
+} else if global.currentGameState == gameState.showMenu {
+	
+	#region  showMenu
+	//show inventory
+	if inpShowInventory {
+		scRevertToPreviousGameState();	//update game state to whatever it was before we showed inventory
+	}
+
+	#endregion
+
+} 
+
+//handle game state agnostic controls
+#region  unviersal controls
+
+//exit game
+if inpCancel == true {
+	game_end()
 }
 
-//select tile
-if inpSelect {
-	oControllerUI.showTileSelect = true;
-	oControllerTile.tileSelectedX = scConvertToTile(mouse_x);
-	oControllerTile.tileSelectedY = scConvertToTile(mouse_y);
+//full screen
+if inpFullScreen == true {
+	
+	switch window_get_fullscreen() {
+		case false:
+			window_set_fullscreen(1);
+			break;
+		case true:
+			window_set_fullscreen(0);
+			break;
+	}
+
+	oControllerCamera.alarm[0] = 1; // recenters display
 }
 
-//pickup item
-if inpPickup && global.currentGameState == gameState.playerTurn {
-	scAttemptPickupItem(_player);
-}
+#endregion
